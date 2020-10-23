@@ -1,0 +1,1612 @@
+Delivered-To: nadirsidi@gmail.com
+Received: by 2002:a05:6a10:6144:0:0:0:0 with SMTP id y4csp516584pxc;
+        Tue, 21 Jul 2020 01:16:01 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzkWpgWj0GYecY764211TSRovNREclmtvY41kabL0eDRfl0nP8qGFB2inCU7fybxfYyGUDg
+X-Received: by 2002:a05:6830:1112:: with SMTP id w18mr22740978otq.301.1595319361482;
+        Tue, 21 Jul 2020 01:16:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1595319361; cv=none;
+        d=google.com; s=arc-20160816;
+        b=TeKgv+mPJaUTTc3wrKb4ZH+chbG7/J1K0/XPqvam7ZXc2aS7LOJvTcnyO7fEKeAX+R
+         8Mrvjq3zGQiFvMyMi+cien2km/u0ikhHCoFQdTU8BSlGbQ51/B0Zjg/i8iD6JBRwThaE
+         jtSkovCmNg5xW3Xi35KKMTfojjrtqXErU1kyGNhkx/WrkEFpVk7BzePjuDqem19FePDu
+         W5EXY1K8qZWVAu8EUT4xQ99/ql1BRkGCjgsLvfI3lkENl3EslSihBBgIKgYG/+WToBbe
+         QqhinogrvfQwiIFGX2ecmv06j80tFc42jXRAw5EShsE5X8K/ekV/xGuQg7QjD8WWu4Te
+         gs4Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:from:to:list-id:in-reply-to:reply-to:date
+         :list-post:message-id:list-unsubscribe:sender:list-owner:list-url
+         :list-archive:references:list-unsubscribe-post:dkim-signature
+         :dkim-signature;
+        bh=5+fy0barxRnabXx+cb/K7XmFlm0ohMI9M8vsrd9qa2Y=;
+        b=oetwbjwAUMp7BN3YYNtqwr4C+yS3hPVlIdWSjpTRE7RtR4oE9V8JCq0+VEQMQsgsk1
+         dwTSDwd8ltFTsddT/DOeaLad23kkvGHH9fhGsy6dpDWLrciJFdcOcNPia/9+1OlcpdL9
+         KHFlHeNRNzdzvpeubjVJhd17XkMehkNnV8bd/hyj/Sjv6QXckyk5ZyIDpsuGiloQ/TEj
+         XblQfuALsOwe2haWdoUmOMTGUNhFSpD1lzncV4NV1BPjRHsepS9bK2jEtX1VvSb6pw6Q
+         PMUDWoIxktEOnX5CZhdCbTgnlFEH21KwIkYK6Tuy0rlXNkzk5GBL9LTfJIaedMK5Z+jw
+         fHVw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg2.substack.com header.s=mailo header.b=AUZFfP+X;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=snyB42uO;
+       spf=pass (google.com: domain of bounce+a71dae.4d1858-nadirsidi=gmail.com@mg2.substack.com designates 69.72.32.112 as permitted sender) smtp.mailfrom="bounce+a71dae.4d1858-nadirsidi=gmail.com@mg2.substack.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=substack.com
+Return-Path: <bounce+a71dae.4d1858-nadirsidi=gmail.com@mg2.substack.com>
+Received: from mg-32-112.substack.com (mg-32-112.substack.com. [69.72.32.112])
+        by mx.google.com with UTF8SMTPS id g26si1015811oti.202.2020.07.21.01.15.49
+        for <nadirsidi@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 21 Jul 2020 01:16:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+a71dae.4d1858-nadirsidi=gmail.com@mg2.substack.com designates 69.72.32.112 as permitted sender) client-ip=69.72.32.112;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg2.substack.com header.s=mailo header.b=AUZFfP+X;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=snyB42uO;
+       spf=pass (google.com: domain of bounce+a71dae.4d1858-nadirsidi=gmail.com@mg2.substack.com designates 69.72.32.112 as permitted sender) smtp.mailfrom="bounce+a71dae.4d1858-nadirsidi=gmail.com@mg2.substack.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=substack.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg2.substack.com; q=dns/txt;
+ s=mailo; t=1595319361; h=Content-Type: Mime-Version: Subject: From: To:
+ List-Id: In-Reply-To: Reply-To: Date: List-Post: Message-Id:
+ List-Unsubscribe: Sender: List-Owner: List-Archive: References:
+ List-Unsubscribe-Post: X-Feedback-Id;
+ bh=5+fy0barxRnabXx+cb/K7XmFlm0ohMI9M8vsrd9qa2Y=; b=AUZFfP+XTb8NClb8ly94tJ0IAyx1c83Hki+UTFtAQKwQW61/we7viwj2C3I9lveAm3GxKkLy
+ 0fvvkNyz3n/PJo0ndggVcAlZf/mabhdyXqeOh6cmaBnFPwiepU7GKFt3uWN6G4sYobNFg/yv
+ SSewsrvJ6UoiuX3Of3gY1QnwCEg=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg;
+ t=1595319361; h=Content-Type: Mime-Version: Subject: From: To: List-Id:
+ In-Reply-To: Reply-To: Date: List-Post: Message-Id: List-Unsubscribe:
+ Sender: List-Owner: List-Archive: References: List-Unsubscribe-Post:
+ X-Feedback-Id; bh=5+fy0barxRnabXx+cb/K7XmFlm0ohMI9M8vsrd9qa2Y=; b=snyB42uOPCHswJQ6mAk1yY3apm+MapRqq2ui8jKj3mogK+W118zZ6Xh8MSYvNqYPHcm0BrgX
+ Aw77YyEO2XCUbvG+5aNsU+ppxnTtvw/qZy5+e92uDtbTj6XJjn3y79K26+NHRTOxo/Ndr5Fx
+ xV6mRlJFofaNfhT8CwLY2ckDrq8=
+X-Feedback-Id: 5a78b6d5cd16820001f2a9d4:mailgun
+X-Mailgun-Sending-Ip: 69.72.32.112
+X-Mailgun-Sid: WyI0ZWExNyIsICJuYWRpcnNpZGlAZ21haWwuY29tIiwgIjRkMTg1OCJd
+X-Mailgun-Batch-Id: 5f16a42f8423214e13f5fbd5
+Received: by luna.mailgun.net with HTTP; Tue, 21 Jul 2020 08:15:43 +0000
+X-Mailgun-Variables: {"category": "post", "user_id": "2543694",
+ "is_freemail": "true", "publication_id": "45800", "post_audience":
+ "everyone", "post_id": "726679", "pub_community_enabled": "true",
+ "post_type": "newsletter", "subdomain": "polimath"}
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+References: <post-726679@substack.com>
+List-Archive: <https://polimath.substack.com/archive>
+List-Url: <https://polimath.substack.com/>
+List-Owner: <mailto:polimath@substack.com>
+Sender: "Marginally Compelling from PoliticalMath" <polimath@substack.com>
+List-Unsubscribe: <https://polimath.substack.com/action/disable_email/disable?podcast=&token=eyJ1c2VyX2lkIjoyNTQzNjk0LCJwb3N0X2lkIjo3MjY2NzksImlhdCI6MTU5NTMxOTM0MSwiaXNzIjoicHViLTQ1ODAwIiwic3ViIjoiZGlzYWJsZV9lbWFpbCJ9.Gw8UWcRqzS02es4_VDjFzM3jX2_4PJivfOex6SAkDos>
+Message-Id: <20200721081541.1.e77ebwhavtc@mg2.substack.com>
+List-Post: <https://polimath.substack.com/p/your-states-covid-numbers-in-context>
+Date: Tue, 21 Jul 2020 08:15:41 +0000
+Reply-To: "Marginally Compelling from PoliticalMath"
+ <reply+fkpj&1iiq6&&3727ec48044188585575428c9e14255c3cddd058f1d1045b3e1db09857290fbc@mg1.substack.com>
+In-Reply-To: <post-726679@substack.com>
+List-Id: <polimath.substack.com>
+X-Mailgun-Tag: post
+To: nadirsidi@gmail.com
+From: Marginally Compelling from PoliticalMath <polimath@substack.com>
+Subject: Your State's COVID Numbers In Context
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="9e860041439f414e99f7b49371a7b720"
+
+--9e860041439f414e99f7b49371a7b720
+Content-Type: text/plain; charset="utf-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+View this post on the web at https://email.mg2.substack.com/c/eJxVkEFuxCAMR=
+U8z7BIBISGzYNFNrxERcCdWE4jAZJrbl8yoi0q2LD3L_vrfWYJHTKfZYyZWMqQJvZG96oa7Yt4o=
+L8Z-ZJinrwSwWVwNpQJsL_OKzhLGcB2ofuScLUbele0sH0cp3djPqhMgJCjhtLZiUJZdMpMtHiE=
+4MHBAOmMAtpqFaM-37uMmP2vtccXN0tLmMmey7rt1cbt47TOW1FRIkBsXD_RNKNsMKTcYKggEP8=
+TQSC4511LwUfRKtKIFrWF-LvYgd1N8e8h_z1kywXpMGT3W9eOy-uLV6VTnVgLSOUGw8wr-HQK9U=
+3t5onMHE-CZVyCC9IY1GS2HQd9ZlfKx_gzmz9ovM9OCzA
+
+I spent a lot of time on this so you didn=E2=80=99t have to read the whole =
+thing.
+A lot of people have asked me on Twitter how their particular state is doin=
+g. If you don=E2=80=99t live in New York, New Jersey, Florida, Georgia, Tex=
+as, Arizona and maybe California, there has been very little news about you=
+r state that gives real context about what the numbers mean. Headlines are =
+allergic to context and the high-population states get all the attention be=
+cause they show big numbers (because they are big states).
+When a smaller state gets any reporting, it is entirely outside any context=
+=2E In Washington, it was reported that=20=
+we had 754 new cases and 7 new deaths=
+ [https://email.mg2.substack.com/c/eJwlUEGOhCAQfM1w0wCC6IHDXvYbpoWekayCgdaJ=
+v1-cSTrppDpV1VUOCF8pX3ZPhdhRME_BW6lV14-Keau8GPTAQpmeGXGDsFrKB7L9mNfggEKKN0H=
+pgXO22A4GD_2Td0KoQQqDYpxB-K6DuTdc9ey2meDwAaNDiyfmK0Vkq12I9vLofh7yt07Ed2kvWF=
+JqXdoqYLRqXMopwhnyURoHBUtjmi1lbHinB8n1KNuFtpUFK7nk3EjBB6GVaEWLxuD8XuAk91B8e=
+8m2HHMhcH-3Pss2gg-5BB_q-XXH_OA15VT3dsRA14QR5hX9twD6NvbJQ9eO9n55RSLMX7C2YmTf=
+m5FVK5-qZqyUNWxAyz9n0X7E]. Is that a lot? How does that compare to other st=
+ates?
+Every state has these questions. The =E2=80=9Chow does this compare=E2=80=
+=9D context is what I=E2=80=99m going to try to give here.
+I split the US into 8 regions for this. The reason is because COVID has hit=
+ different regions in different ways at different times and I want to make =
+that clear. The correlation between COVID trends and geographic regions dwa=
+rfs every other variable that I can find. I don=E2=80=99t know why.
+I=E2=80=99m sorry if I=E2=80=99ve grouped your state in an offensive way. V=
+ermont is in the same category as Hawaii b/c it was getting late and I real=
+ly wanted to get this out and also sleep.
+I=E2=80=99m looking at 2 metrics, cases and deaths. There are other importa=
+nt metrics (hospitalizations and positive percentage), but it=E2=80=99s jus=
+t too much to include everything.
+In every chart, I=E2=80=99ve added a red line. For cases, the line is 10 ne=
+w cases per day per 100K residents. When cases rise above this line, it=E2=
+=80=99s a sign that things *could* go very badly. For deaths, it is at 0.1 =
+deaths per day per 100K residents (one death per million per day). This is =
+my gauge for =E2=80=9Cthings got VERY bad=E2=80=9D.=20
+These numbers are somewhat arbitrary, but they help me ground myself and I =
+hope they help you establish a baseline against which you may judge how you=
+r state is doing.
+Now=E2=80=A6 skip around as you feel led:
+Midwest (Iowa, Illinois, Indiana, Michigan, Minnesota, Missouri, Ohio, Wisc=
+onsin
+Mountain States (Colorado, Idaho, Nevada, Utah, Wyoming)
+First Hit (Northeast) States (Connecticut, DC, Delaware, Massachusetts, Mar=
+yland, New Jersey, New York, Rhode Island, Pennsylvania)
+Southern Border (Alabama, Arizona, California, Florida, Louisiana, Mississi=
+ppi, New Mexico, Texas)
+Mid-South (Arkansas, Georgia, Kentucky, North Carolina, South Carolina, Ten=
+nessee, Virginia, West Virginia)
+Plain States (Kansas, Montana, North Dakota, Nebraska, Oklahoma, South Dako=
+ta)
+West Coast (Washington, Oregon, California)
+Upper Northeast + Alaska & Hawaii (Vermont, New Hampshire, Maine, Alaska, H=
+awaii)
+Summary
+Disney Shorts - Fall Out, Fall In
+Midwest
+There were two states in the Midwest that got hit pretty badly early on. Mi=
+chigan and Illinois both saw some fairly intense COVID spread in April and =
+May, likely due to the fact that they both host fairly large and dense citi=
+es.
+One thing we see here is how the lack of testing early on really hobbled ou=
+r ability to even know what was going on. From the cases chart, it looks li=
+ke Illinois had more cases than Michigan, but from the (more reliable) deat=
+h metric, we can assume that it was largely because we were unable to ident=
+ity COVID cases in Michigan early on.
+For the rest of the midwest, we can see that Indiana struggled early on, bu=
+t that the region as a whole managed to pull things down. We can see cases =
+falling until late June, when they start to rise again. This could be due t=
+o increased testing, but if you call one of these states your home, make su=
+re you watch the percent positive metric carefully. If it starts to rise (a=
+bove 15% of tests coming back positive is a bad sign), take that as a warni=
+ng sign.
+Mountain States
+Of the mountain states, Colorado saw the biggest early surge in COVID cases=
+=2E We can see this in both the cases an=
+d deaths metric (though that bump in =
+late April is usually an indication of some kind of data dump from the Colo=
+rado Department of Health).
+The current surges in Idaho, Nevada, and Utah are concerning. It is encoura=
+ging that the death rates remain low, but we should brace ourselves for the=
+ possibility of an increase in deaths in those three states in the next few=
+ weeks.
+First Hit States (Northeast)
+These are the states that bore the brunt of the first crush of this virus. =
+This is the hardest group of states for me to talk about. I want to state c=
+learly and unequivocally that the damage done in these states is not their =
+fault or the result of poor policy. New York City got hit early and that cr=
+ush spread to the surrounding areas.
+In all the other charts, only 3 states (Michigan, Arizona, Louisiana) go ab=
+ove the =E2=80=9Cthis line is very bad=E2=80=9D metric. My sense is that ve=
+ry few people outside of the Northeast understand the true scope of what ha=
+ppened there. Of all the states in this group, only Maryland was able to ke=
+ep deaths under that =E2=80=9C1 death per million per day=E2=80=9D line.
+The northeast got hit fast and hard in a way that it=E2=80=99s very hard to=
+ understand if you did not live through it. They have managed to pull both =
+deaths and cases down into a manageable range and for they they should be c=
+ommended.
+Side note: That weird jump in New Jersey=E2=80=99s death data in late June =
+is when NJ decided to add =E2=80=9Cprobable=E2=80=9D deaths to their death =
+reporting. In the world of data, weird looking things tend to have very bor=
+ing explanations.=20
+Southern Border
+These are the states we are currently talking about because they are the st=
+ates with the biggest COVID surges.
+But cases are somewhat deceptive because we have *much* more testing capabi=
+lity now than we had when this crisis began. We=E2=80=99re able to identify=
+ far more cases now than in April.
+Even so, we should be concerned. The signs that Arizona is in trouble have =
+been evident for weeks. The good news is that Arizona seems to be past thei=
+r peak, which means that we can hope that this surge will do far less damag=
+e than we feared.
+Everyone talks about Texas because it=E2=80=99s huge, but Texas is moving i=
+n tandem with Louisiana, Mississippi, and Alabama. Add Florida to this grou=
+p, though the Florida case numbers are particularly high due to their aggre=
+ssive and targeted testing.=20
+I=E2=80=99m going to tell you a secret: All the data people are hoping that=
+ these 5 states are at their peak. We are all looking at the daily data com=
+ing in and there are some signs that these states are at a peak. They might=
+ not be. But they might. We=E2=80=99re all holding our breath over this nex=
+t week and praying to see case reductions.=20
+No one in my data circles says this because offering optimism and then bein=
+g wrong is how the assholes on Twitter destroy you. This is why the news is=
+ constantly dour. There are no consequences for being pessimistic and being=
+ wrong. The only time you are attacked is when you offer signs of hope and =
+those signs are false.
+That is why this newsletter exists. So I can tell you what we are all seein=
+g and thinking but not saying. We see signs of hope in the southern border =
+states. We=E2=80=99ll see if it holds true.=20
+The Mid-South
+The mid-south is the most interesting area to me because they are close to =
+the southern border states, but there is a strange stratification in their =
+case data.
+First, let=E2=80=99s look at the two hardest hit states: Georgia and South =
+Carolina. Both states have recently seen aggressive case increases. These s=
+tates are the ones I=E2=80=99m watching the closest. It is odd to me that S=
+outh Carolina=E2=80=99s deaths have increased these last few weeks while Ge=
+orgia=E2=80=99s have not.
+I have no explanation for this. I don=E2=80=99t know why this seems to be h=
+appening. I=E2=80=99m simply showing you the data.
+Otherwise, I find it strange that the further north you go, the better stat=
+es seem to do. The worst states are the ones furthest south (Georgia, South=
+ Carolina). If you go one notch to the north (Arkansas, Tennessee, North Ca=
+rolina) things look better. Another notch to the north (Kentucky, Virginia,=
+ West Virginia) and things look even better.
+I cannot tell you why. I can guess, but I=E2=80=99ve learned that guesses a=
+re not evidence. This is simply a thing I find interesting and strange and =
+it leads me to assume an enormous amount of grace and generosity in interpr=
+eting how this thing spreads.
+Plain States
+Yeah, Montana is probably a mountain state, shut up.
+One of the things I have been most annoyed with is the people who have been=
+ claiming that COVID may have started in urban centers but is coming for ru=
+ral America where there are fewer ICU units and hospital beds and that will=
+ spell disaster.=20
+Quite frankly, this does not seem to be the case. Among the Plain states, C=
+OVID simply does not seem to have taken a solid hold. Recently cases have g=
+one above the caution line in a few states, but this is most likely due to =
+the small urban centers that these states host. Cases are relatively low an=
+d deaths have been thankfully few and far between.=20
+There has been some concern about Oklahoma and Kansas recently, but their i=
+ncreases are not exponential and there is hope that they can pull the infec=
+tion curve under control reasonably soon.
+West Coast
+Yes, yes, careful observer, I have included California twice. I added them =
+to =E2=80=9CSouthern Border=E2=80=9D states as well as =E2=80=9CWest Coast=
+=E2=80=9D. The reason is because I suspect that California belongs in both =
+these regions. I think that the southern part of California is more similar=
+ to Texas and Arizona while the northern part is more akin to Oregon and Wa=
+shington.
+Even Washington and California shows up as some of the earliest problem are=
+as for COVID, they have managed to avoid the worst parts of this pandemic. =
+Cases are low and deaths are low.
+This may be due to the incredibly strict lock-downs that have been implemen=
+ted across the western states. It may be due to the mask mandates that are =
+ubiquitous on the west coast. Or it may be due to early intervention in urb=
+an areas. For whatever reason, the west coast has seen some of the lowest C=
+OVID infections outside of=E2=80=A6
+Upper Northeast + Alaska and Hawaii
+How do I describe these glorious parts of our great country without soundin=
+g condescending?
+For whatever reason, be it a lack of travel and tourism or careful state po=
+licy, these states have managed to avoid the worst impacts of COVID over th=
+e last 4 months. They have low case rates and near-zero death rates.
+Alaska and Hawaii are clearly able to separate themselves from sources of i=
+nfection due to the fact that they are isolated regions with solid control =
+and self-governance. But the same goes for Vermont, New Hampshire, and Main=
+e. They are low-density states and while they may not be screening traveler=
+s at the border, they likely benefit from the overall drop in mobility as p=
+eople prefer to stay home over travelling to the rugged and gorgeous region=
+s to the north where all the weirdos live.=20
+Summary
+I hope you=E2=80=99ve found this helpful. I hope you found your state and w=
+ere able to decipher where your area fits in a larger scheme of things.=20
+If this was not as helpful as you hoped, please reach out either in comment=
+s or through twitter (I=E2=80=99m found at @politicalmath [https://email.mg=
+2.substack.com/c/eJwlUM2OhCAMfho5GkBQPHDYy76GQegoWQQDdYxvvzCTNGn6Nf1-ag3Clv=
+Kjz1SQXAXy4p3mUgzjLIjTwjElFfFleWWAw_igMV9AzmsN3hr0KbYDIRWlZNezUhKkhXlmq2Uzy=
+Jcd-PRiYmSDGjgnTWYxl_MQLWh4Q35SBBL0jniWbvjp-G8tvD0i5N6mo05nCh6rWjgM7sRrTjml=
+E2dUMSlYz3qYJljv3bzRdoIeG-_LtRY09q8xkKyjcT4X73xdby3FB68hltqPK3p8FohmDeC--fD=
+7kI9dfE7QEe4SoJn6gjX0xMdxmkmVcqlyRt18Nov_FcN1Qw] ) and I=E2=80=99ll do my b=
+est to answer every question.
+I think we are doing better. I=E2=80=99m hopeful that we are already past t=
+he worst of this. But I=E2=80=99m still cautious and careful. I want an inf=
+ormed optimism over a willfully blind optimism.=20
+Disney Shorts: Fall Out, Fall In
+World War 2 was hard on the Disney company. Disney had always made a good c=
+hunk of money from their international box office (mainly Europe) and WWII =
+essentially locked off half of the world from paying to see the glorious Di=
+sney films that were admired by communists and fascists alike.
+Disney, ever the patriot, hoped to find relief in making films for the mili=
+tary, but they were a demanding client and not eager to pay for the quality=
+ they demanded.
+In the end, the Walt Disney Company ended up making a series of films that =
+were meant to resonate with the struggles of the enlisted man (though such =
+a customer had little time or opportunity to watch picture shows). =20
+This is one of those shorts trying desperately to meet people where they ar=
+e. Donald is a grunt in the army, marching endless miles and enduring the g=
+raceless and brutal patterns of army life. It is a rather tender and gently=
+ humorous view of army life, perhaps meant to provide relief and comfort to=
+ those at home that their loved ones were enduring hardship but there was s=
+ome joy to be found in it.
+I imagine there is some parallel in our current moment though I struggle to=
+ put my finger on it.
+--9e860041439f414e99f7b49371a7b720
+Content-Type: text/html; charset="ascii"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><title>Your State's COVID Numbers In Context</title><style>
+@media screen and (min-width: 481px) {
+  .share-button-container {
+    height: 38px;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container a.comment {
+    height: 38px;
+    line-height: 38px;
+    padding-right: 10px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .share-button-container .separator {
+    display: block;
+    margin: 0;
+    height: 8px;
+    border-left: none;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .share-button-container a.share.first img {
+    padding-left: 0;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container a.mobile {
+    display: none !important;
+  }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .post .markup table.image-wrapper img,
+  .post .markup table.kindle-wrapper img {
+    max-width: 550px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post .markup iframe.spotify-wrap,
+  .post .markup a.spotify-wrap {
+    width: auto !important;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .post {
+    padding: 15px 0;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .post-silhouette {
+    padding: 15px 0;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-silhouette .post-silhouette-title {
+    margin-top: 10.44225025px;
+    height: 120px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-silhouette .post-silhouette-meta {
+    width: 75%;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-silhouette .post-silhouette-meta.with-byline-image {
+    margin: 20px 0;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  table.post-meta tr td.post-meta-item {
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-preview > .post-preview-image {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-preview-silhouette .post-preview-silhouette-image {
+    display: none;
+  }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .markup table.image-wrapper img,
+  body .markup table.kindle-wrapper img {
+    max-width: 550px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .markup iframe.spotify-wrap,
+  body .markup a.spotify-wrap {
+    width: auto !important;
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  body .header a.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  body .subscription-receipt table .subscription-amount .subscription-disco=
+unt {
+    width: 72px !important;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  body .share-button-container {
+    height: auto;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  body .share-button-container .separator {
+    display: block !important;
+    margin: 0 !important;
+    height: 8px !important;
+    border-left: none !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .footer {
+    outline: 8px solid #f8f8f8 !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .digest .item .post-meta-item.audience {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  .digest-publication .logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .user-profile-modal {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  table.thread-head .markup table.image-wrapper img,
+  table.thread-head .markup table.kindle-wrapper img {
+    max-width: 550px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  table.thread-head .markup iframe.spotify-wrap,
+  table.thread-head .markup a.spotify-wrap {
+    width: auto !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .subscribe-widget form.form .sideBySideWrap button.rightButton {
+    padding: 10px 12px;
+    min-width: 112px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .audio-player-wrapper .audio-player .audio-player-progress {
+    border-left-width: 16px;
+    border-right-width: 16px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .audio-player-wrapper .audio-player .audio-player-progress .audio-player-=
+progress-bar .audio-player-progress-bar-popup {
+    top: -54px;
+  }
+}
+</style></head><body class=3D"email-body" style=3D"font-kerning: auto;"><di=
+v style=3D"display:none;font-size:1px;color:#333333;line-height:1px;max-hei=
+ght:0px;max-width:0px;opacity:0;overflow:hidden;" class=3D"preview">I spent=
+ a lot of time on this so you didn&#8217;t have to read the whole thing. A =
+lot of people have asked me on Twitter how their particular state is doing.=
+ If you don&#8217;t live in New York, New Jersey, Florida, Georgia, Texas, =
+Arizona and maybe California, there has been very little news about your st=
+ate that gives real context about what the numbers mean. Headlines are alle=
+rgic to context and the high-population states get all the attention becaus=
+e they show big numbers (because they are big states).&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;</div><table role=3D"presentation" width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" class=3D"email-body-container"><tr><td></td><td=
+ width=3D"550" class=3D"content"></td><td></td></tr><tr><td></td><td align=
+=3D"left" width=3D"550" class=3D"content"><div style=3D"font-size: 16px; li=
+ne-height: 26px; margin: 0 auto; max-width: 550px; overflow-wrap: break-wor=
+d; width: 100%;"><div class=3D"preamble" style=3D"font-size: 16px; line-hei=
+ght: 26px;"><div class=3D"body markup" style=3D"font-size: 16px; line-heigh=
+t: 26px; margin-bottom: 12px; word-break: break-word;"><p style=3D"color: #=
+1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0; margin-top: =
+0;">Get every issue of Marginally Compelling delivered to your inbox!</p><d=
+iv class=3D"subscribe-widget is-signed-up" style=3D"font-size: 16px; line-h=
+eight: 26px; margin: 0 0 1em; margin-bottom: 0;"><p class=3D"button-wrapper=
+" style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 =
+1em 0; text-align: center;"><a href=3D"https://email.mg2.substack.com/c/eJx=
+VUsuO4jAQ_Jrktsg2ec0hh9kAA4gERQQG9oIcuwMmTzkOmfD14wzsSiv1xdXuqu6uZlTBpZaD39=
+StMrsW5Flwn9jW1HmzTO5bHHu2Z4r2nEmAkorCV7IDs-nSQjCqRF2NBZbtIWRe_dS2M-5i1yJZB=
+hhzy-NuatPUSSnyLMs1R5kz7biAioEPd5BDXYFZ-FelmtaYvhtkoaOpC1FSdZ20XdoqyvIJq0uN=
+j08mRQrGdKHqHCpjOoNhjRk5DEdS5KtbPURJ_IhuOdoE6-Z0jMX2NsfbZP8Ik_wRzebtqjxYLFg=
+5YbK3o0f-FSYhCne9oMfooesFWx7EJonxdvber0Qv2PQgRvxErsWJqDvXnFk8ieLUE2u83xXlQj=
+rBbjZHGVpu5ss_8e9dsPyQ4Wf3tQw--4-9QZxOlecSuOjKseNxjy-wrTvJ9Dizf6P96gW_gHrlW=
+V0pqJT-4BLHcd9M4RNEEHIJRh62LTzBE3BdSPsrvStmWKi8kP_WZkq_olzIVnCh05dR_AfXHmr6=
+suwqoYYzVDQtgD_tVc97-HFLDQ34FfRtAUqBfILa81c_WorXmrPy_5r2DUqFzHo" native=3D"=
+" class=3D"button primary subscribe-btn" style=3D"background-color: #FF81CD=
+; border: none; border-radius: 4px; box-sizing: border-box; color: #ffffff;=
+ cursor: pointer; display: inline-block; font-family: -apple-system, 'Segoe=
+ UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI =
+Emoji', 'Segoe UI Symbol'; font-size: 16px; height: auto; margin: 0; opacit=
+y: 1; outline: none; padding: 6px 20px; text-decoration: none !important;">=
+<span style=3D"text-decoration: none;">Subscribe now</span></a></p></div></=
+div><hr style=3D"background: #f6dfed; border: none; height: 1px; margin: 24=
+px 0; padding: 0;"></div><div class=3D"post-header " style=3D"font-size: 16=
+px; line-height: 26px;"><h1 class=3D"post-title short published" style=3D"c=
+olor: #1a1a1a; font-family: 'SF Compact Display', -apple-system, 'Segoe UI'=
+, Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoj=
+i', 'Segoe UI Symbol'; font-size: 2em; font-weight: 700; line-height: 1.1em=
+; margin: 0.378em 0 0 0;"><a href=3D"https://email.mg2.substack.com/c/eJxVk=
+U1vozAQQH9NuCUy2HwdfKhSpUm2UGXLZtO9IGNPwgQwLJhQ8utLkt1DpRmN9GY8I_lJYeBUtyNv=
+6s5YfQdtioo7LqNeyCzFmbIDN7CwS48tQCWw5KbtwWr6rEQpDNb69oC5ASFWzhmhwsmEpwIahgF=
+xM0ZAuUc_pNIlnu1ZtzOp6BWClsDhAu1Ya7BKnhvTdDP6NHNWUzR1iZUw-aLrs84IWSxkXd34lG=
+Pdt_MJGujmsr6gmuu-yqDt5qgnoA18mhldmboAPaPPMG5t6ezHg1MWm3M9xsnuGp8L8rrcDhmNy=
+T9Oo_OHE1-LblOVuVpuvCj55cZJ9PmWRCR6H1Ac4us0h3K9x9dkZ789Pw0bHFDSPd75S3hVS3v8=
+83t1Vi_lJcNtuFivbAypvhxV5Dfhz4PPovekkNftYb33dj_27l-WhKscRMos5A5xCPEdmwS2y-y=
+FvQDfh2zIxcXIGSPVyfn2H1bLtVDYdqhwap9udu58kpNOteo1mjEFLbIS1MObeYi-azBjA1zD0J=
+VgDLQPOMn0Hc_zQ2s6peppp-b_bXwByv2-lw" style=3D"color: #1a1a1a; text-decorat=
+ion: none;">Your State's COVID Numbers In Context</a></h1><table class=3D"m=
+eta-with-photo" style=3D"margin: 1em 0;"><tr><td><div class=3D"user-head " =
+style=3D"font-size: 16px; line-height: 26px;"><a href=3D"https://email.mg2.=
+substack.com/c/eJxVUMuOwyAM_Jpy28hQksCBw172NyIeboM2gQicVvn7Ja16WMmSrbE947G3=
+hPdcDrPlSmyvWKYYjOjlddCSBSMDV71isU63grjauBgqO7Jtd0v0lmJO54LsFQCbjeVOCvAeGmA=
+BgSs9CK2Us3jT1nF2ykx2DxGTR4MPLEdOyBYzE231cv2-iJ8WW17iamnu6u4qWf_b-byeOOZtwV=
+Zw4LoH0F-fSRaNAAEwCg6K95J3vMNxRPec7YP8RcJ6F__oWDHJhlhqDLG176e5F968TS2ve4p0T=
+JisWzC8bdP7Ty8XdGxoEj7rgkRY3mD7xSiGYdSsSYXcOJP5nPgHbVZ8Zw"><div class=3D"pr=
+ofile-img-wrap" style=3D"font-size: 16px; line-height: 26px; position: rela=
+tive;"><img src=3D"https://cdn.substack.com/image/fetch/w_90,h_90,c_fill,f_=
+auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3=
+-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F8a2722e7-b668-=
+41a9-82a0-de6055fb474d_400x399.jpeg" height=3D"45" width=3D"45" style=3D"-m=
+oz-border-radius: 50%; -webkit-border-radius: 50%; border: none !important;=
+ border-radius: 50%; cursor: pointer; display: block; height: 45px; max-wid=
+th: 550px; vertical-align: middle; width: 45px;"></div></a></div></td><td><=
+div class=3D"meta-col" style=3D"font-size: 16px; line-height: 1em; margin-l=
+eft: 12px;"><a href=3D"https://email.mg2.substack.com/c/eJxVUMuOwyAM_Jpy28h=
+QksCBw172NyIeboM2gQicVvn7Ja16WMmSrbE947G3hPdcDrPlSmyvWKYYjOjlddCSBSMDV71isU=
+63grjauBgqO7Jtd0v0lmJO54LsFQCbjeVOCvAeGmABgSs9CK2Us3jT1nF2ykx2DxGTR4MPLEdOy=
+BYzE231cv2-iJ8WW17iamnu6u4qWf_b-byeOOZtwVZw4LoH0F-fSRaNAAEwCg6K95J3vMNxRPec=
+7YP8RcJ6F__oWDHJhlhqDLG176e5F968TS2ve4p0TJisWzC8bdP7Ty8XdGxoEj7rgkRY3mD7xSi=
+GYdSsSYXcOJP5nPgHbVZ8Zw" class=3D"user-name" style=3D"color: #1a1a1a; font-=
+family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 17px; t=
+ext-decoration: none;">PoliMath</a><table cellpadding=3D"0" cellspacing=3D"=
+0" class=3D"post-meta   custom" style=3D"margin: 0;"><tr><td class=3D"post-=
+meta-item post-date" style=3D"color: #757575; font-family: -apple-system, '=
+Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Sego=
+e UI Emoji', 'Segoe UI Symbol'; font-size: 14px; font-weight: 300; height: =
+20px; line-height: 20px; padding: 7px 12px 7px 0; padding-bottom: 0; paddin=
+g-top: 0; position: relative; text-decoration: none; vertical-align: middle=
+; white-space: nowrap;">Jul 21</td><td class=3D"post-meta-item icon" style=
+=3D"color: #757575; font-family: -apple-system, 'Segoe UI', Roboto, Helveti=
+ca, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Sym=
+bol'; font-size: 14px; font-weight: 300; height: 20px; line-height: 20px; p=
+adding: 7px 12px 7px 0; padding-bottom: 0; padding-top: 0; position: relati=
+ve; text-decoration: none; text-indent: 3px; vertical-align: middle; white-=
+space: nowrap;"><span><a href=3D"https://email.mg2.substack.com/c/eJxVkk2P2=
+jAQhn8NuRXZTgLJwYdVKShhSbvqbmF7iRx7gMmXo9iBDb--DuweKlkezWN7vl5LYeGk-5F32lhv=
+MNDnqDgLA38RB57igaJRGHlo8mMP0Aisue0H8LqhqFEKi7qdHgRhRIh35pRIQoJjtPCFX0AkCQ3=
+DqDhKoCqICYu9KU0uBoXQSuBwgX7ULXg1P1vbmZn_NGNrtzpdYyPseW6Gwlghq7nUjeOiQ7df6P=
+2Ksc7ca_rWg5BTLTN_bXUFzq5gTKlkf8YDq6uk1GP2-nLLyoo8f0-vhZ-RT-7vyneW3SqTtGn9v=
+s-I2MeD4xh0rErwimK_Js7_yF4rurv9CHe3lw8Xo5P-Dn9ielX7xGart2C3ekLHb86f-Ph3vy7V=
+pr4UmMZzP3nO4fCrLeXWZmWp8q1OMEqjU7l52b5BvrpEeEiz8-Y3mbHFYJvc6KGX4Pr4msAnb0D=
+h0Ez9TY17yBlhhCwZJRENAzqnc1guobiexcXKWUCaE_tviF7PW6GwN6jQHZ-mKHfuFM2dbYYW7Z=
+hDK4oa1ENs-_gdd-3s2AFv4WpqsBb6B3Q_YMkWi2XsuVRKu5gt_5LwH3Xy0T4" class=3D"lik=
+e-button" style=3D"color: #757575; display: block; position: relative; text=
+-decoration: none;"><img src=3D"https://cdn.substack.com/image/fetch/w_30,c=
+_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2F=
+icon%2FHeartIcon%3Fv%3D2%26height%3D20" width=3D"15" height=3D"20" style=3D=
+"border: none !important; float: left; height: 20px; max-width: 15px; verti=
+cal-align: middle; width: auto;" alt=3D""></a></span></td><td class=3D"post=
+-meta-item icon" style=3D"color: #757575; font-family: -apple-system, 'Sego=
+e UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI=
+ Emoji', 'Segoe UI Symbol'; font-size: 14px; font-weight: 300; height: 20px=
+; line-height: 20px; padding: 7px 12px 7px 0; padding-bottom: 0; padding-to=
+p: 0; position: relative; text-decoration: none; text-indent: 3px; vertical=
+-align: middle; white-space: nowrap;"><a href=3D"https://email.mg2.substack=
+=2Ecom/c/eJxVkk1zmzAQhn-NudkD4vvAIeOMY7u=
+BjBvqur0wQlrMGhAUCRP86yPs5NAZ6fJoP7Tv=
+u4wqOLf9FHWtVMYgoc-QR8R1bC90DB453ArcwECZFT1AQ7GOVD-A0Q15jYwqbMWc4LiBaRplZNm=
+-bxZW4RDKbRJoXLCchUXBGA9IYRtzm4wOHEEwiOAK_dQKMOqoVKqTC_tpQTb6dG2NDVXlSg65VJ=
+RVK9Y2M9d3aod-qaECuWTtFflSDE0OvVyi0EAo-FA6TCc0IJSuuVFtBWJhP8O0txg5TidSV7tLO=
+yXp4ZZcKvN1vR9zOzG_uB1f_pDkVsldU5d8vfPi9JebpPHHWxqb8fuI9JTcdByy7RFf04P19vw0=
+7nBEZh_xzl_CG19b09_fmwt_qa857sPVdmNhaItrwWO_C3-efCd-Tyt225-2R-_w4-j-c9JwUwL=
+NnAXxBtVkUg_KQP_7W4Qv3gDHoZnnmf0wMCImMU2fWGZguY61slbg-5CPJb0qtnDM5kz-09HoI0=
+E59hI56ufzXOXOtanZLNsgUE0ZCJrXwB9-q8eC3O1TUweRgFHWoBT0D6iXwCee54eGbsVbXVNE3=
+y5-AiYc08U" style=3D"color: #757575; display: block; text-decoration: none;=
+"><img src=3D"https://cdn.substack.com/image/fetch/w_28,c_scale,f_png,q_aut=
+o:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FCommentIcon=
+%3Fv%3D2%26height%3D20" width=3D"14" height=3D"20" style=3D"border: none !i=
+mportant; float: left; height: 20px; max-width: 14px; stroke: #757575; vert=
+ical-align: middle; width: auto;" alt=3D""></a></td><td class=3D"post-meta-=
+item icon" style=3D"color: #757575; font-family: -apple-system, 'Segoe UI',=
+ Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji=
+', 'Segoe UI Symbol'; font-size: 14px; font-weight: 300; height: 20px; line=
+-height: 20px; margin-right: 0; padding: 7px 12px 7px 0; padding-bottom: 0;=
+ padding-right: 0; padding-top: 0; position: relative; text-decoration: non=
+e; text-indent: 3px; vertical-align: middle; white-space: nowrap;"><span><a=
+ href=3D"https://email.mg2.substack.com/c/eJxVks2SojAUhZ8GdlohBJAFiy67bHUau=
+pxmHGc2VEiuEoHAkCCNT9_Bn8VUJZsvNzn35FxGNZyabozaRmm7V9BlgkfYI64fEptHhDsLb2EL=
+lR07gJqKKtJdD3bb55VgVItGTheIt0DILiJEg8ChOKf-EfkBoT6lDsE8oH648EOP2JNMRnsuQDK=
+I4ALd2Eiwq6jQulWW-2LhlVltU4ma6mKu-lxpyso5a-qJmz02fTczUIOaseYi-Ez2dQ6dmglpgN=
+TwpS13pZsSpOW-wrh1GN6PB1yVm3MzJunumpxL9L7cDrmboAd34_MfnFxLtamrgi83fpz-8pI0_=
+vpIYxR_DoIekqupE2y9F-_pzvl4fRk2YhDM3YsbfwuvfOmMf3-vzvytuuRiG87XK0eErrwceRy0=
+4c9DQOLPtGTX7WG993c_9t4_koarAmhGLOz3us6UccfA9P10_uA1cNHXk58phAe8uZV6qi5oB4Z=
+SNkXyBLaIMMIIBdhBC8cjztyZQxBAPhT0oplFUH3C__2x3UWSctEpwYU5Pk1iN24CN3J13Uuhxw=
+wkzSvg91nQ9-G5RavHFiIJg6pAa-ju0AxIgH0_CG0jxRvzpoyeCX8D0Vjcng" style=3D"colo=
+r: #757575; display: block; text-decoration: none;"><img src=3D"https://cdn=
+=2Esubstack.com/image/fetch/w_22,c_scale=
+,f_png,q_auto:good,fl_progressive:ste=
+ep/https%3A%2F%2Fsubstack.com%2Ficon%2FShareIcon%3Fv%3D2%26height%3D20%26st=
+roke%3D%2523999999" width=3D"11" height=3D"20" style=3D"border: none !impor=
+tant; float: left; height: 20px; max-width: 11px; vertical-align: middle; w=
+idth: auto;" alt=3D""></a></span></td></tr></table></div></td></tr></table>=
+</div><div class=3D"post" style=3D"font-size: 16px; line-height: 26px; padd=
+ing: 9px 0;"><div class=3D"body markup" style=3D"font-size: 16px; line-heig=
+ht: 26px; margin-bottom: 12px; word-break: break-word;"><p style=3D"color: =
+#1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0; margin-top:=
+ 0;">I spent a lot of time on this so you didn&#8217;t have to read the who=
+le thing.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px=
+; margin: 0 0 1em 0;">A lot of people have asked me on Twitter how their pa=
+rticular state is doing. If you don&#8217;t live in New York, New Jersey, F=
+lorida, Georgia, Texas, Arizona and maybe California, there has been very l=
+ittle news about your state that gives real context about what the numbers =
+mean. Headlines are allergic to context and the high-population states get =
+all the attention because they show big numbers (because they are big state=
+s).</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; marg=
+in: 0 0 1em 0;">When a smaller state gets any reporting, it is entirely out=
+side any context. In Washington, it was reported that we had <a href=3D"htt=
+ps://email.mg2.substack.com/c/eJwlUEGOhCAQfM1w0wCC6IHDXvYbpoWekayCgdaJv1-cS=
+TrppDpV1VUOCF8pX3ZPhdhRME_BW6lV14-Keau8GPTAQpmeGXGDsFrKB7L9mNfggEKKN0HpgXO2=
+2A4GD_2Td0KoQQqDYpxB-K6DuTdc9ey2meDwAaNDiyfmK0Vkq12I9vLofh7yt07Ed2kvWFJqXdo=
+qYLRqXMopwhnyURoHBUtjmi1lbHinB8n1KNuFtpUFK7nk3EjBB6GVaEWLxuD8XuAk91B8e8m2HH=
+MhcH-3Pss2gg-5BB_q-XXH_OA15VT3dsRA14QR5hX9twD6NvbJQ9eO9n55RSLMX7C2YmTfm5FVK=
+5-qZqyUNWxAyz9n0X7E" style=3D"color: #1a1a1a; text-decoration: underline;">=
+754 new cases and 7 new deaths</a>. Is that a lot? How does that compare to=
+ other states?</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height:=
+ 26px; margin: 0 0 1em 0;">Every state has these questions. The &#8220;how =
+does this compare&#8221; context is what I&#8217;m going to try to give her=
+e.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margi=
+n: 0 0 1em 0;">I split the US into 8 regions for this. The reason is becaus=
+e COVID has hit different regions in different ways at different times and =
+I want to make that clear. The correlation between COVID trends and geograp=
+hic regions dwarfs every other variable that I can find. I don&#8217;t know=
+ why.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; ma=
+rgin: 0 0 1em 0;">I&#8217;m sorry if I&#8217;ve grouped your state in an of=
+fensive way. Vermont is in the same category as Hawaii b/c it was getting l=
+ate and I really wanted to get this out and also sleep.</p><p style=3D"colo=
+r: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">I&#8217=
+;m looking at 2 metrics, cases and deaths. There are other important metric=
+s (hospitalizations and positive percentage), but it&#8217;s just too much =
+to include everything.</p><p style=3D"color: #1a1a1a; font-size: 16px; line=
+-height: 26px; margin: 0 0 1em 0;">In every chart, I&#8217;ve added a red l=
+ine. For cases, the line is 10 new cases per day per 100K residents. When c=
+ases rise above this line, it&#8217;s a sign that things *could* go very ba=
+dly. For deaths, it is at 0.1 deaths per day per 100K residents (one death =
+per million per day). This is my gauge for &#8220;things got VERY bad&#8221=
+;. </p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; marg=
+in: 0 0 1em 0;">These numbers are somewhat arbitrary, but they help me grou=
+nd myself and I hope they help you establish a baseline against which you m=
+ay judge how your state is doing.</p><p style=3D"color: #1a1a1a; font-size:=
+ 16px; line-height: 26px; margin: 0 0 1em 0;">Now&#8230; skip around as you=
+ feel led:</p><ul style=3D"margin: 1em 0;"><li style=3D"margin: 3.75px 0 3.=
+75px 7.5px; mso-special-format: bullet;"><p style=3D"color: #1a1a1a; font-s=
+ize: 16px; line-height: 26px; margin: 0;"><strong>Midwest </strong>(Iowa, I=
+llinois, Indiana, Michigan, Minnesota, Missouri, Ohio, Wisconsin</p></li><l=
+i style=3D"margin: 3.75px 0 3.75px 7.5px; mso-special-format: bullet;"><p s=
+tyle=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0;"><st=
+rong>Mountain States</strong> (Colorado, Idaho, Nevada, Utah, Wyoming)</p><=
+/li><li style=3D"margin: 3.75px 0 3.75px 7.5px; mso-special-format: bullet;=
+"><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0=
+;"><strong>First Hit (Northeast) States</strong> (Connecticut, DC, Delaware=
+, Massachusetts, Maryland, New Jersey, New York, Rhode Island, Pennsylvania=
+)</p></li><li style=3D"margin: 3.75px 0 3.75px 7.5px; mso-special-format: b=
+ullet;"><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; mar=
+gin: 0;"><strong>Southern Border</strong> (Alabama, Arizona, California, Fl=
+orida, Louisiana, Mississippi, New Mexico, Texas)</p></li><li style=3D"marg=
+in: 3.75px 0 3.75px 7.5px; mso-special-format: bullet;"><p style=3D"color: =
+#1a1a1a; font-size: 16px; line-height: 26px; margin: 0;"><strong>Mid-South =
+</strong>(Arkansas, Georgia, Kentucky, North Carolina, South Carolina, Tenn=
+essee, Virginia, West Virginia)</p></li><li style=3D"margin: 3.75px 0 3.75p=
+x 7.5px; mso-special-format: bullet;"><p style=3D"color: #1a1a1a; font-size=
+: 16px; line-height: 26px; margin: 0;"><strong>Plain States</strong> (Kansa=
+s, Montana, North Dakota, Nebraska, Oklahoma, South Dakota)</p></li><li sty=
+le=3D"margin: 3.75px 0 3.75px 7.5px; mso-special-format: bullet;"><p style=
+=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0;"><strong=
+>West Coast </strong>(Washington, Oregon, California)</p></li><li style=3D"=
+margin: 3.75px 0 3.75px 7.5px; mso-special-format: bullet;"><p style=3D"col=
+or: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0;"><strong>Upper =
+Northeast + Alaska &amp; Hawaii</strong> (Vermont, New Hampshire, Maine, Al=
+aska, Hawaii)</p></li><li style=3D"margin: 3.75px 0 3.75px 7.5px; mso-speci=
+al-format: bullet;"><p style=3D"color: #1a1a1a; font-size: 16px; line-heigh=
+t: 26px; margin: 0;"><strong>Summary</strong></p></li><li style=3D"margin: =
+3.75px 0 3.75px 7.5px; mso-special-format: bullet;"><p style=3D"color: #1a1=
+a1a; font-size: 16px; line-height: 26px; margin: 0;"><strong>Disney Shorts =
+- Fall Out, Fall In</strong></p></li></ul><h2 style=3D"color: #1a1a1a; font=
+-family: 'SF Compact Display', -apple-system, 'Segoe UI', Roboto, Helvetica=
+, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbo=
+l'; font-size: 1.625em; font-weight: 700; line-height: 1.16em; margin: 1em =
+0 0.625em 0;">Midwest</h2><table class=3D"image-wrapper" width=3D"100%" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em auto; =
+mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"=
+></td><td align=3D"left" class=3D"content" width=3D"550" style=3D"text-alig=
+n: center;"><a class=3D"image-link" target=3D"_blank" href=3D"https://email=
+=2Emg2.substack.com/c/eJxVUc3OpCAQfJrxpk=
+FAYQ4evmyyr2EaaJX9FFzAmZ19-m31tIFApfq=
+nOl0WCs4xfYY95lIdGdPo3cA7KfqnrNwgXas7Xfk8TglxA78OJR1Y7YdZvYXiYzgLZKcZq5YBes=
+UN6Fb1ZmKSEVZKCA4ge01HVKfMCIfzGCwO-ML0iQGrdVhK2fNDfD34T7rWhSYfJhew342NG1F-g=
+xnpn7DY5UwZV7_58uA_JmpYIoHfNxBfc4zuDKzjnuKcMGf_QuJzQdyp9hbj3SnXnYL0mMN-I8VT=
+jawzxmpZGwBRS6GwfnatrsEZwQ0q9dSyyaKBDf7GAO98T0g97q1c8Bo3X3BqJ8m1ZHVvHKtlB7a=
+GSZh6AnDYwXOilqPu2z9Stc2vHefKD5xxxhRvmW472TZtQzlo3gu8in1Its38v_1UaQjgfMreeQ=
+rPp1EXTxON9G9H8OUzYgCzorstLLfnlyPls-MQ8J1XLAXTTZKvive9elYk5SL1DFRCW4ey_ANRG=
+LtA" style=3D"border: none; display: block; height: auto; margin: 0; paddin=
+g: 0; text-decoration: none; width: auto;"><img data-attrs=3D"{&quot;src&qu=
+ot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazona=
+ws.com/public/images/f1f42840-6bd0-45ac-af3b-faade5a9fe77_861x471.jpeg&quot=
+;,&quot;height&quot;:471,&quot;width&quot;:861,&quot;resizeWidth&quot;:null=
+,&quot;bytes&quot;:105798,&quot;alt&quot;:null,&quot;title&quot;:null,&quot=
+;type&quot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=
+=3D"550" class=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w=
+_1722,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbuckete=
+er-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%=
+2Ff1f42840-6bd0-45ac-af3b-faade5a9fe77_861x471.jpeg" style=3D"-ms-interpola=
+tion-mode: bicubic; border: none !important; display: block; height: auto; =
+margin: 0 auto; max-width: 550px; vertical-align: middle; width: 100%;"></a=
+></td><td style=3D"text-align: center;"></td></tr></tbody></table><table cl=
+ass=3D"image-wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" style=3D"margin: 1.6em auto; mso-padding-alt: 1em 0 1.6em;"><tbo=
+dy><tr><td style=3D"text-align: center;"></td><td align=3D"left" class=3D"c=
+ontent" width=3D"550" style=3D"text-align: center;"><a class=3D"image-link"=
+ target=3D"_blank" href=3D"https://email.mg2.substack.com/c/eJxVUc3O3CAMfJr=
+llojwk5ADh0-V-hqRASdLvwRSILvdPn1JcqqE7NEYeyyPhYJLTB-9x1zIkTFN3mkmBe9HQZwWrl=
+NSEZ-nOSFu4Fdd0oFkP8zqLRQfw9kgpKKUPPUg-0Ex5TgfqGDCmLHrEViP_SzRsZmcMhMczmOwq=
+PGF6RMDklU_S9nzg3892M_6rAttPkwuYL9bG7dK-Q0WrHnGYp_nl2n1my8P9mOuA0us4PcN-NcS=
+ozsL67SnuCTM2b-w8rkg7rX3FmPylJOnYA3msN9Y66lBKo2xSjQGgDeCD9iMslMNOMOZwWEYlWg=
+zb2GDvzHAO98b1hn3VS54rZsvyMXcCWSikXR0jRgZb2AGaHqqpByt6mZgk-rZH6Fo-2vHhXjNKK=
+N0YB1VnRRd27VVFs37Ca9iH4JuC_vvPiTpAM6n7J2v5eU06uLrRlPN2xF8-UwYwKzobgvL7fnlS=
+PnsqAO-84qlYLrJ6uvA-n4YSZVysc4MtaVeHcrzH8bOujg" style=3D"border: none; disp=
+lay: block; height: auto; margin: 0; padding: 0; text-decoration: none; wid=
+th: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05b=
+bc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/34f14e24-50=
+9d-4923-afaa-608559c81fa2_862x480.jpeg&quot;,&quot;height&quot;:480,&quot;w=
+idth&quot;:862,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:111045,&quot;=
+alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&quo=
+t;,&quot;href&quot;:null}" alt=3D"" width=3D"550" class=3D"wide-image" src=
+=3D"https://cdn.substack.com/image/fetch/w_1724,c_limit,f_auto,q_auto:good,=
+fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32b=
+e77984.s3.amazonaws.com%2Fpublic%2Fimages%2F34f14e24-509d-4923-afaa-608559c=
+81fa2_862x480.jpeg" style=3D"-ms-interpolation-mode: bicubic; border: none =
+!important; display: block; height: auto; margin: 0 auto; max-width: 550px;=
+ vertical-align: middle; width: 100%;"></a></td><td style=3D"text-align: ce=
+nter;"></td></tr></tbody></table><p style=3D"color: #1a1a1a; font-size: 16p=
+x; line-height: 26px; margin: 0 0 1em 0;">There were two states in the Midw=
+est that got hit pretty badly early on. Michigan and Illinois both saw some=
+ fairly intense COVID spread in April and May, likely due to the fact that =
+they both host fairly large and dense cities.</p><p style=3D"color: #1a1a1a=
+; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">One thing we see =
+here is how the lack of testing early on really hobbled our ability to even=
+ know what was going on. From the cases chart, it looks like Illinois had m=
+ore cases than Michigan, but from the (more reliable) death metric, we can =
+assume that it was largely because we were unable to identity COVID cases i=
+n Michigan early on.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-h=
+eight: 26px; margin: 0 0 1em 0;">For the rest of the midwest, we can see th=
+at Indiana struggled early on, but that the region as a whole managed to pu=
+ll things down. We can see cases falling until late June, when they start t=
+o rise again. This could be due to increased testing, but if you call one o=
+f these states your home, make sure you watch the percent positive metric c=
+arefully. If it starts to rise (above 15% of tests coming back positive is =
+a bad sign), take that as a warning sign.</p><h2 style=3D"color: #1a1a1a; f=
+ont-family: 'SF Compact Display', -apple-system, 'Segoe UI', Roboto, Helvet=
+ica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Sy=
+mbol'; font-size: 1.625em; font-weight: 700; line-height: 1.16em; margin: 1=
+em 0 0.625em 0;">Mountain States</h2><table class=3D"image-wrapper" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:=
+ 1.6em auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-al=
+ign: center;"></td><td align=3D"left" class=3D"content" width=3D"550" style=
+=3D"text-align: center;"><a class=3D"image-link" target=3D"_blank" href=3D"=
+https://email.mg2.substack.com/c/eJxVUduu3CAM_JrlLRHXQB54OKrU34i4OFl6EkiB7H=
+b79SXJUyVkj8bYY3mcqbCk_NF7KhUdBfIUvKaCs2HkyGvuiRIKhTLNGWAzYdU1H4D2w67BmRpSP=
+Bu4UBijp2aWGTIowoZhFJgRK61gdJgdpdQxPKBTZjKHDxAdaHhB_qQIaNXPWvfyYF8P-rM952Nf=
+Dluqcd-9S1ujwmYWaHmG6p7nl2kNW6gP-mNuA2tq4PcN2NeSkj8L67TntGQoJbyg8aUC7K33FqP=
+ilBOnYAv2cN_Q6rkDLKx1infWGNZxJqEbBVGd8ZZRC1KOiveF9WYzf1M073Jv2GbcV7ngtW65ID=
+Ds6SxE59lsO24Bd4oB6QyVAmM8KontpAbyh0vS_9phQUFTTDGWlGBFBCc96Zss2PfTvKp7cLwt9=
+L_7oKyj8SGX4EMrL6dRF982mlrejhjqZ4Jo7Ar-trDenl-O1M8OOsK7rFAr5Jtsvko6DHJETcqn=
+NjO2lnZ1U5__ALMbuao" style=3D"border: none; display: block; height: auto; m=
+argin: 0; padding: 0; text-decoration: none; width: auto;"><img data-attrs=
+=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32b=
+e77984.s3.amazonaws.com/public/images/e30d2f55-d3fb-4be0-83e1-a2750009870b_=
+861x471.jpeg&quot;,&quot;height&quot;:471,&quot;width&quot;:861,&quot;resiz=
+eWidth&quot;:null,&quot;bytes&quot;:98651,&quot;alt&quot;:null,&quot;title&=
+quot;:null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" =
+alt=3D"" width=3D"550" class=3D"wide-image" src=3D"https://cdn.substack.com=
+/image/fetch/w_1722,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3=
+A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpu=
+blic%2Fimages%2Fe30d2f55-d3fb-4be0-83e1-a2750009870b_861x471.jpeg" style=3D=
+"-ms-interpolation-mode: bicubic; border: none !important; display: block; =
+height: auto; margin: 0 auto; max-width: 550px; vertical-align: middle; wid=
+th: 100%;"></a></td><td style=3D"text-align: center;"></td></tr></tbody></t=
+able><table class=3D"image-wrapper" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em auto; mso-padding-alt: 1em =
+0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td><td align=3D"le=
+ft" class=3D"content" width=3D"550" style=3D"text-align: center;"><a class=
+=3D"image-link" target=3D"_blank" href=3D"https://email.mg2.substack.com/c/=
+eJxVUc3OpCAQfJrxpkF-FA8evmyyr2EaaBz2U3EBZ3b26bfV0yYEKtVUV6fLQsE5ps-4x1yqI2O=
+aghu5kqIbZOVG6VqtdBXy5BPiCmEZSzqw2g-zBAslxO0USKUZq56jttJq0XW2Rem9ZxYEMmmk63=
+tlgJOObCY4XMDN4ogvTJ-4YbWMz1L2_BBfD_6TjnVbkw-TC9jvxsaVqLDCjPR6LPZ5fpmWsIby4=
+D88NSyRwO8biK85RncWlmlPcU6Yc3gh8bkg7qS9zbg67dRpSJc57DdSPdXIlDFWy9oAiFqKHutB=
+tboGZwQ32PeDlk0WDazwN27wzveE1OPeygWvcfMFhW2N70HVqh26WnrV1QOgqEEwDb633vhu0h3=
+_IzVrfu04V2HkjDPW85bpVsm2aRuyRfN-wqvYh2TrzP_bT5XGDVxIObhA5fkM6uJpoone9dhC-U=
+y4gVnQ3RGWO_MrkfLZcdzwnRcsBdNNUq4977p-qMjKReq5kYS2DuX5DwRwu-E" style=3D"bor=
+der: none; display: block; height: auto; margin: 0; padding: 0; text-decora=
+tion: none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https:/=
+/bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/ima=
+ges/3c1bf7a5-5196-4f56-9ae3-a308af7cfbf6_862x480.jpeg&quot;,&quot;height&qu=
+ot;:480,&quot;width&quot;:862,&quot;resizeWidth&quot;:null,&quot;bytes&quot=
+;:99470,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;=
+image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" class=3D"wi=
+de-image" src=3D"https://cdn.substack.com/image/fetch/w_1724,c_limit,f_auto=
+,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437=
+e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3c1bf7a5-5196-4f56=
+-9ae3-a308af7cfbf6_862x480.jpeg" style=3D"-ms-interpolation-mode: bicubic; =
+border: none !important; display: block; height: auto; margin: 0 auto; max-=
+width: 550px; vertical-align: middle; width: 100%;"></a></td><td style=3D"t=
+ext-align: center;"></td></tr></tbody></table><p style=3D"color: #1a1a1a; f=
+ont-size: 16px; line-height: 26px; margin: 0 0 1em 0;">Of the mountain stat=
+es, Colorado saw the biggest early surge in COVID cases. We can see this in=
+ both the cases and deaths metric (though that bump in late April is usuall=
+y an indication of some kind of data dump from the Colorado Department of H=
+ealth).</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; =
+margin: 0 0 1em 0;">The current surges in Idaho, Nevada, and Utah are conce=
+rning. It is encouraging that the death rates remain low, but we should bra=
+ce ourselves for the possibility of an increase in deaths in those three st=
+ates in the next few weeks.</p><h2 style=3D"color: #1a1a1a; font-family: 'S=
+F Compact Display', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sa=
+ns-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-si=
+ze: 1.625em; font-weight: 700; line-height: 1.16em; margin: 1em 0 0.625em 0=
+;">First Hit States (Northeast)</h2><table class=3D"image-wrapper" width=3D=
+"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 1.=
+6em auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align=
+: center;"></td><td align=3D"left" class=3D"content" width=3D"550" style=3D=
+"text-align: center;"><a class=3D"image-link" target=3D"_blank" href=3D"htt=
+ps://email.mg2.substack.com/c/eJxVUdGupCAM_ZrhTYMIig8-3Gyyv2EKVIe9Ci7gzM5-_=
+VZ92oS0J6e0p-mxUHCJ6TPuMRd2ZEyTd6NQsu0GydwoXaOVZj5Pc0LcwK9jSQey_TCrt1B8DGeD=
+VJpz9hxbNYBx0sxaCyGUA2GUNoQaxdU8a3bKTHA4j8HiiC9MnxiQreOzlD0_2q-H-EnPulDnw-Q=
+C9ru2cSPKb7Ag5RmLfZ5fptVvvjzEj5kGlkjg9w3aryVGdxbWaU9xSZizfyHxuSDu1HuLCXXKqV=
+OQgjnsN1I9VciVMVbLygC0lWx7rAbV6AqcaYXBvh-0rHNbwwZ_Y4B3vjekGfdVLnitmy_YSkAJc=
+19J20AlBfLKIAyVMa5B28-ztGLSHf_TSVX_2nFhfhRccN6LhutGyaZuapJF837Cq9iH5Nsi_rsP=
+S2MA51P2zlN5OY26eNpoorwdwZfPhAHMiu62sNyeX46Uz45jwHdesRRMN0m-9qLr-oGRlIs0M1A=
+LXR3K8x8n5rvK" style=3D"border: none; display: block; height: auto; margin:=
+ 0; padding: 0; text-decoration: none; width: auto;"><img data-attrs=3D"{&q=
+uot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.=
+s3.amazonaws.com/public/images/34ae4af7-4c1a-42e0-bea9-bbd1ec7ff4c2_860x645=
+=2Ejpeg&quot;,&quot;height&quot;:645,&qu=
+ot;width&quot;:860,&quot;resizeWidth&=
+quot;:null,&quot;bytes&quot;:129997,&quot;alt&quot;:null,&quot;title&quot;:=
+null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D=
+"" width=3D"550" class=3D"wide-image" src=3D"https://cdn.substack.com/image=
+/fetch/w_1720,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2=
+Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2=
+Fimages%2F34ae4af7-4c1a-42e0-bea9-bbd1ec7ff4c2_860x645.jpeg" style=3D"-ms-i=
+nterpolation-mode: bicubic; border: none !important; display: block; height=
+: auto; margin: 0 auto; max-width: 550px; vertical-align: middle; width: 10=
+0%;"></a></td><td style=3D"text-align: center;"></td></tr></tbody></table><=
+table class=3D"image-wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" style=3D"margin: 1.6em auto; mso-padding-alt: 1em 0 1.6e=
+m;"><tbody><tr><td style=3D"text-align: center;"></td><td align=3D"left" cl=
+ass=3D"content" width=3D"550" style=3D"text-align: center;"><a class=3D"ima=
+ge-link" target=3D"_blank" href=3D"https://email.mg2.substack.com/c/eJxVUUu=
+unDAQPM14B8I_sBcsniLlGsifhnEe2MQ2M5mcPg2sIll2qdrd1apypsKS8mfcU6nkKJCn4EcmBe=
+-1IH4UniqpSCjTnAE2E9ax5gPIftg1OFNDimeDkKrryHPkks8z6zrfa-XFQKmYldHUKW-MVk6RU=
+2Yyhw8QHYzwgvxJEcg6Pmvdy4N_PdhPPM7Hthy2VOO-W5c2pMJmFsB3huqe55dpDVuoD_ZjxoE1=
+Ifh9A_61pOTPwjrtOS0ZSgkvQL5UgB17bzEmTzl5CuJlD_cNWM8NdNJap0RjjeGN4AM0WlLVGG8=
+5szAMWom28NZs5m-K5l3uDXHG7coFr3XLBT3zgmuwDe9m2wjvVGOV9o0aJNMSqJrpPKme_9GKt7=
+92WEgYWYcuDox2ikpBW9qiLNj307yqe4huW9h__pA8RuNDLsEHLC9nUBePG034bkcM9TNBNHYFf=
+0dY78yvROpnhzHCu6xQK-SbxFwH1veDJijlE86M2IKum_r8B7BDuxY" style=3D"border: no=
+ne; display: block; height: auto; margin: 0; padding: 0; text-decoration: n=
+one; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://bucket=
+eer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/d2d=
+439eb-30fb-4dc8-b89d-875295e18f1f_863x983.jpeg&quot;,&quot;height&quot;:983=
+,&quot;width&quot;:863,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:19086=
+1,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/=
+jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" class=3D"wide-ima=
+ge" src=3D"https://cdn.substack.com/image/fetch/w_1726,c_limit,f_auto,q_aut=
+o:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518=
+-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fd2d439eb-30fb-4dc8-b89d-=
+875295e18f1f_863x983.jpeg" style=3D"-ms-interpolation-mode: bicubic; border=
+: none !important; display: block; height: auto; margin: 0 auto; max-width:=
+ 550px; vertical-align: middle; width: 100%;"></a></td><td style=3D"text-al=
+ign: center;"></td></tr></tbody></table><p style=3D"color: #1a1a1a; font-si=
+ze: 16px; line-height: 26px; margin: 0 0 1em 0;">These are the states that =
+bore the brunt of the first crush of this virus. This is the hardest group =
+of states for me to talk about. I want to state clearly and unequivocally t=
+hat the damage done in these states is not their fault or the result of poo=
+r policy. New York City got hit early and that crush spread to the surround=
+ing areas.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26p=
+x; margin: 0 0 1em 0;">In all the other charts, only 3 states (Michigan, Ar=
+izona, Louisiana) go above the &#8220;this line is very bad&#8221; metric. =
+My sense is that very few people outside of the Northeast understand the tr=
+ue scope of what happened there. Of all the states in this group, only Mary=
+land was able to keep deaths under that &#8220;1 death per million per day&=
+#8221; line.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 2=
+6px; margin: 0 0 1em 0;">The northeast got hit fast and hard in a way that =
+it&#8217;s very hard to understand if you did not live through it. They hav=
+e managed to pull both deaths and cases down into a manageable range and fo=
+r they they should be commended.</p><p style=3D"color: #1a1a1a; font-size: =
+16px; line-height: 26px; margin: 0 0 1em 0;">Side note: That weird jump in =
+New Jersey&#8217;s death data in late June is when NJ decided to add &#8220=
+;probable&#8221; deaths to their death reporting. In the world of data, wei=
+rd looking things tend to have very boring explanations. </p><h2 style=3D"c=
+olor: #1a1a1a; font-family: 'SF Compact Display', -apple-system, 'Segoe UI'=
+, Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoj=
+i', 'Segoe UI Symbol'; font-size: 1.625em; font-weight: 700; line-height: 1=
+=2E16em; margin: 1em 0 0.625em 0;">South=
+ern Border</h2><table class=3D"image-=
+wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" st=
+yle=3D"margin: 1.6em auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td st=
+yle=3D"text-align: center;"></td><td align=3D"left" class=3D"content" width=
+=3D"550" style=3D"text-align: center;"><a class=3D"image-link" target=3D"_b=
+lank" href=3D"https://email.mg2.substack.com/c/eJxVUc3OpCAQfJrhpkF-FA8evmyy=
+r2EaaBz2U3ABZ3b26Rf1tAmBSjXd1akyUHCJ6TPtMRdyZEyztxOTgvejIHYStlNSEZ9nlxA38Ot=
+U0oFkP_TqDRQfw9kgpKKUPKdOKypBuhE4Q225sx1VvTPMKm2ZHMkpM8NhPQaDE74wfWJAsk7PUv=
+b84F8P9rMeY0ObD50LmO_WxK1SfoMF6-uwmOf5ZV795suD_XB1YIkV_L4B_1pitGdhnfcUl4Q5-=
+xdWPhfEvfbeYkyecvIUrJc-zDfWemqQSq2NEo0G4I3gAzaj7FQDVnOmcRhGJdrMW9jgbwzwzveG=
+dcbtygWvdfMFnYIRBMVGKisbofuxAcFYw6Vwxo3OdZzOqu_-9IK3v3ZciJ8YZZQOrLrXSdG1XVt=
+lUb-f8CrmIei2sP_8IWkKYH3K3vpaXs6gLr5uNNd3O4IvnxkD6BXtHWG5M78SKZ8dp4DvvGIpmG=
+6y5jqwvh9GUqVsrDNDbamuQ3n-A20Ou1I" style=3D"border: none; display: block; h=
+eight: auto; margin: 0; padding: 0; text-decoration: none; width: auto;"><i=
+mg data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437=
+e-9518-adb32be77984.s3.amazonaws.com/public/images/f8a9a40e-58d5-4b69-a422-=
+354fcf9ff130_861x643.jpeg&quot;,&quot;height&quot;:643,&quot;width&quot;:86=
+1,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:123964,&quot;alt&quot;:nul=
+l,&quot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot;href=
+&quot;:null}" alt=3D"" width=3D"550" class=3D"wide-image" src=3D"https://cd=
+n.substack.com/image/fetch/w_1722,c_limit,f_auto,q_auto:good,fl_progressive=
+:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amaz=
+onaws.com%2Fpublic%2Fimages%2Ff8a9a40e-58d5-4b69-a422-354fcf9ff130_861x643.=
+jpeg" style=3D"-ms-interpolation-mode: bicubic; border: none !important; di=
+splay: block; height: auto; margin: 0 auto; max-width: 550px; vertical-alig=
+n: middle; width: 100%;"></a></td><td style=3D"text-align: center;"></td></=
+tr></tbody></table><table class=3D"image-wrapper" width=3D"100%" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em auto; mso-pad=
+ding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td><=
+td align=3D"left" class=3D"content" width=3D"550" style=3D"text-align: cent=
+er;"><a class=3D"image-link" target=3D"_blank" href=3D"https://email.mg2.su=
+bstack.com/c/eJxVUduunDAM_JrNGyg3IDzk4ahSfwPlYiA9kNAk7Hb79TXLU6Uotux4xplxps=
+KS8lsfqVRyFshT8Jp3UvSjJF5Lz1SnSCjTnAF2EzZd8wnkOO0WnKkhxWtAdopSsuqZ92CpUKxjS=
+qjZcy4VjGy0XApnJCMXzWROHyA60PCE_E4RyKbXWo_yEF8P_hOP87Etpy3VuO_WpR1LYTcLYJyh=
+uvV6Mm1hD_XBf8wIWBMmv-9EfC0p-auxTUdOS4ZSwhOwXirAgbM3Ge8uuu4ixMue7huwnxugnbV=
+OycYaIxopBmhG_E9jvBXcwjCMSrZFtGY3f1M0r3JviBi3Kp_0s265kY204LhtvPCI55xrRjpCMx=
+spR8ZgMEM_qZ7_kYq2vw5YSNCcckoHzihKKVnLWqQF-1rNs7qHpPvC_9OHZB2ND7kEH7C9XEZ96=
+rjRhHE_Y6jvCaKxG_jbwnp7_nGkvg_QEV5lg1oh30X0deB9P4wEqXxCzIgjqLqp6z9DhbsU" st=
+yle=3D"border: none; display: block; height: auto; margin: 0; padding: 0; t=
+ext-decoration: none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&qu=
+ot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/=
+public/images/ba4bec2b-d3d3-4ccc-909e-fa44911e7a76_862x480.jpeg&quot;,&quot=
+;height&quot;:480,&quot;width&quot;:862,&quot;resizeWidth&quot;:null,&quot;=
+bytes&quot;:112992,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&q=
+uot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" =
+class=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w_1724,c_l=
+imit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc=
+84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fba4bec2=
+b-d3d3-4ccc-909e-fa44911e7a76_862x480.jpeg" style=3D"-ms-interpolation-mode=
+: bicubic; border: none !important; display: block; height: auto; margin: 0=
+ auto; max-width: 550px; vertical-align: middle; width: 100%;"></a></td><td=
+ style=3D"text-align: center;"></td></tr></tbody></table><p style=3D"color:=
+ #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">These are=
+ the states we are currently talking about because they are the states with=
+ the biggest COVID surges.</p><p style=3D"color: #1a1a1a; font-size: 16px; =
+line-height: 26px; margin: 0 0 1em 0;">But cases are somewhat deceptive bec=
+ause we have *much* more testing capability now than we had when this crisi=
+s began. We&#8217;re able to identify far more cases now than in April.</p>=
+<p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0=
+ 1em 0;">Even so, we should be concerned. The signs that Arizona is in trou=
+ble have been evident for weeks. The good news is that Arizona seems to be =
+past their peak, which means that we can hope that this surge will do far l=
+ess damage than we feared.</p><p style=3D"color: #1a1a1a; font-size: 16px; =
+line-height: 26px; margin: 0 0 1em 0;">Everyone talks about Texas because i=
+t&#8217;s huge, but Texas is moving in tandem with Louisiana, Mississippi, =
+and Alabama. Add Florida to this group, though the Florida case numbers are=
+ particularly high due to their aggressive and targeted testing. </p><p sty=
+le=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0=
+;">I&#8217;m going to tell you a secret: All the data people are hoping tha=
+t these 5 states are at their peak. We are all looking at the daily data co=
+ming in and there are some signs that these states are at a peak. They migh=
+t not be. But they might. We&#8217;re all holding our breath over this next=
+ week and praying to see case reductions. </p><p style=3D"color: #1a1a1a; f=
+ont-size: 16px; line-height: 26px; margin: 0 0 1em 0;">No one in my data ci=
+rcles says this because offering optimism and then being wrong is how the a=
+ssholes on Twitter destroy you. This is why the news is constantly dour. Th=
+ere are no consequences for being pessimistic and being wrong. The only tim=
+e you are attacked is when you offer signs of hope and those signs are fals=
+e.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margi=
+n: 0 0 1em 0;">That is why this newsletter exists. So I can tell you what w=
+e are all seeing and thinking but not saying. We see signs of hope in the s=
+outhern border states. We&#8217;ll see if it holds true. </p><h2 style=3D"c=
+olor: #1a1a1a; font-family: 'SF Compact Display', -apple-system, 'Segoe UI'=
+, Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoj=
+i', 'Segoe UI Symbol'; font-size: 1.625em; font-weight: 700; line-height: 1=
+=2E16em; margin: 1em 0 0.625em 0;">The M=
+id-South</h2><table class=3D"image-wr=
+apper" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"margin: 1.6em auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td styl=
+e=3D"text-align: center;"></td><td align=3D"left" class=3D"content" width=
+=3D"550" style=3D"text-align: center;"><a class=3D"image-link" target=3D"_b=
+lank" href=3D"https://email.mg2.substack.com/c/eJxVUdGupCAM_ZrhTYOAig8-3Gyy=
+v2EKVIe9Ci7gzM5-_VZ9WkJoc0rPaXosFFxi-ox7zIUdGdPk3ShaJbtBMTcq1-hWM5-nOSFu4Ne=
+xpAPZfpjVWyg-hrNBtZpz9hylpTMb6KQRoncGdAMArZAWCdSGnTITHM5jsDjiC9MnBmTr-Cxlzw=
+_59RA_6VoX6nyYXMB-1zZuBPkNFqQ4Y7HP88u0-s2Xh_gxE2GJlPy-E_m1xOjOwjrtKS4Jc_YvJ=
+DwXxJ16bzHRnnLtKUiPOew3Uj1VyFtjrFaVAZCVkj1WQ9voCpyRwmDfD1rVWdawwd8Y4J3vCYnj=
+3sqVXuPmK7Vz3-lhsNU8aFspK4jP9briHbgO-KAHtJPumj-qb-pfOy7Mj4ILznvRcN20qqmbmmT=
+RvJ_wKvah-LaI__bD0hjA-ZS981ReTqMunCaaKG5H8OUzYQCzorstLLfnlyPls-MY8J1XLAXTDZ=
+Kvvei6fmAk5SJxBmqhrUN5_gM5y7x5" style=3D"border: none; display: block; heig=
+ht: auto; margin: 0; padding: 0; text-decoration: none; width: auto;"><img =
+data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9=
+518-adb32be77984.s3.amazonaws.com/public/images/cf76899c-f98c-4c2e-9d78-06a=
+d6a0989ec_861x471.jpeg&quot;,&quot;height&quot;:471,&quot;width&quot;:861,&=
+quot;resizeWidth&quot;:null,&quot;bytes&quot;:107926,&quot;alt&quot;:null,&=
+quot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot;href&qu=
+ot;:null}" alt=3D"" width=3D"550" class=3D"wide-image" src=3D"https://cdn.s=
+ubstack.com/image/fetch/w_1722,c_limit,f_auto,q_auto:good,fl_progressive:st=
+eep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazona=
+ws.com%2Fpublic%2Fimages%2Fcf76899c-f98c-4c2e-9d78-06ad6a0989ec_861x471.jpe=
+g" style=3D"-ms-interpolation-mode: bicubic; border: none !important; displ=
+ay: block; height: auto; margin: 0 auto; max-width: 550px; vertical-align: =
+middle; width: 100%;"></a></td><td style=3D"text-align: center;"></td></tr>=
+</tbody></table><table class=3D"image-wrapper" width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em auto; mso-paddin=
+g-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td><td =
+align=3D"left" class=3D"content" width=3D"550" style=3D"text-align: center;=
+"><a class=3D"image-link" target=3D"_blank" href=3D"https://email.mg2.subst=
+ack.com/c/eJxVUcuO5CAM_JrmlojwSMiBw2ik_Y2Ih0mYSSADpHt7v35JchoJ2aUydlkuowrMM=
+b3lHnNBR4Y0eSsJZ7QfGbKS2U5wgXyeXALYlF9lSQeg_dCrN6r4GM4GxgXGaJHE9KPtrRuA9r0W=
+mnPuBiOs40IQCg6dMpM6rIdgQMIT0jsGQKtcStnzg348yJ_6jA1tPnQuyny3Jm6V8puaoWYHxSz=
+nl2n1my8P8unqwBIr-LkB_ZhjtGdhnfYU5wQ5-ydUPheAvfbeYoSfcvwUrEEf5htqPTWAudZGsE=
+YrRRtGB2hG3olGWU2JhmEYBWszbdWm_sWgXvnesM64r3LBa918QeWoZWwUDe4caRhxphm1HhumM=
+Vgy9NwZPome_GUCt187zMhLggnGA-mw6Djr2q6tsqBfi3oW82B4m8mv-6Akg7I-ZW99Lc-nURdf=
+N5pq3o7gy3uCoPQK9raw3J5fjpT3DjLAK69QCqSbrL4OpO-HEVUpG-vMUFvq1VVZ_gN5V7t0" s=
+tyle=3D"border: none; display: block; height: auto; margin: 0; padding: 0; =
+text-decoration: none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&q=
+uot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com=
+/public/images/af3d4498-01f2-42fc-9bb9-4b0ed2765fc5_862x480.jpeg&quot;,&quo=
+t;height&quot;:480,&quot;width&quot;:862,&quot;resizeWidth&quot;:null,&quot=
+;bytes&quot;:99280,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&q=
+uot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" =
+class=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w_1724,c_l=
+imit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc=
+84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Faf3d449=
+8-01f2-42fc-9bb9-4b0ed2765fc5_862x480.jpeg" style=3D"-ms-interpolation-mode=
+: bicubic; border: none !important; display: block; height: auto; margin: 0=
+ auto; max-width: 550px; vertical-align: middle; width: 100%;"></a></td><td=
+ style=3D"text-align: center;"></td></tr></tbody></table><p style=3D"color:=
+ #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">The mid-s=
+outh is the most interesting area to me because they are close to the south=
+ern border states, but there is a strange stratification in their case data=
+=2E</p><p style=3D"color: #1a1a1a; font-=
+size: 16px; line-height: 26px; margin=
+: 0 0 1em 0;">First, let&#8217;s look at the two hardest hit states: Georgi=
+a and South Carolina. Both states have recently seen aggressive case increa=
+ses. These states are the ones I&#8217;m watching the closest. It is odd to=
+ me that South Carolina&#8217;s deaths have increased these last few weeks =
+while Georgia&#8217;s have not.</p><p style=3D"color: #1a1a1a; font-size: 1=
+6px; line-height: 26px; margin: 0 0 1em 0;">I have no explanation for this.=
+ I don&#8217;t know why this seems to be happening. I&#8217;m simply showin=
+g you the data.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height=
+: 26px; margin: 0 0 1em 0;">Otherwise, I find it strange that the further n=
+orth you go, the better states seem to do. The worst states are the ones fu=
+rthest south (Georgia, South Carolina). If you go one notch to the north (A=
+rkansas, Tennessee, North Carolina) things look better. Another notch to th=
+e north (Kentucky, Virginia, West Virginia) and things look even better.</p=
+><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 =
+0 1em 0;">I cannot tell you why. I can guess, but I&#8217;ve learned that g=
+uesses are not evidence. This is simply a thing I find interesting and stra=
+nge and it leads me to assume an enormous amount of grace and generosity in=
+ interpreting how this thing spreads.</p><h2 style=3D"color: #1a1a1a; font-=
+family: 'SF Compact Display', -apple-system, 'Segoe UI', Roboto, Helvetica,=
+ Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol=
+'; font-size: 1.625em; font-weight: 700; line-height: 1.16em; margin: 1em 0=
+ 0.625em 0;">Plain States</h2><table class=3D"image-wrapper" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em au=
+to; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: cent=
+er;"></td><td align=3D"left" class=3D"content" width=3D"550" style=3D"text-=
+align: center;"><a class=3D"image-link" target=3D"_blank" href=3D"https://e=
+mail.mg2.substack.com/c/eJxVUduupCAQ_JrhTSMXAR98ONlkf8Nw6VH2KLiAMzv79dvq0yY=
+EKtV0V6fKmQpzyp9xT6WSo0Cegh9ZL7gcBPGj8FT3moQyPTPAZsI61nwA2Q-7BmdqSPFsEL3uOr=
+KMXaec9ExxqjRV4AQIKtUgnWDcGuPIKTOZwweIDkZ4Qf6kCGQdl1r38uBfD_YTj_OxLYct1bjv1=
+qUNqbCZGfB9QnXL-WVawxbqg_144sCaEPy-Af-aU_JnYZ32nOYMpYQXIF8qwI69txjrT7n-FMTL=
+Hu4bsJ4b6HprnRYNbswbwRU0Q091Y7zlzIJSgxZt4a3ZzN8UzbvcG-KM25ULXuuWC4LUILRjDZV=
+AG2GeQzOIARqpLKXSA1eWT1rSP0LR9tcOMwkj6xh6yWinaS9oS1uUBftezKu6h-i2mf3nD8ljND=
+7kEnzA8nwGdfG40YTvdsRQPxNEY1fwd4T1zvxKpH52GCO8ywq1Qr5JzFUxifERlPIJZ0ZsQddNX=
+f4B4Nu6aQ" style=3D"border: none; display: block; height: auto; margin: 0; =
+padding: 0; text-decoration: none; width: auto;"><img data-attrs=3D"{&quot;=
+src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.a=
+mazonaws.com/public/images/e68e48c2-16e1-4af9-949e-67b116de37b3_861x471.jpe=
+g&quot;,&quot;height&quot;:471,&quot;width&quot;:861,&quot;resizeWidth&quot=
+;:null,&quot;bytes&quot;:95931,&quot;alt&quot;:null,&quot;title&quot;:null,=
+&quot;type&quot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" wi=
+dth=3D"550" class=3D"wide-image" src=3D"https://cdn.substack.com/image/fetc=
+h/w_1722,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbuck=
+eteer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimag=
+es%2Fe68e48c2-16e1-4af9-949e-67b116de37b3_861x471.jpeg" style=3D"-ms-interp=
+olation-mode: bicubic; border: none !important; display: block; height: aut=
+o; margin: 0 auto; max-width: 550px; vertical-align: middle; width: 100%;">=
+</a></td><td style=3D"text-align: center;"></td></tr></tbody></table><table=
+ class=3D"image-wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" style=3D"margin: 1.6em auto; mso-padding-alt: 1em 0 1.6em;"><=
+tbody><tr><td style=3D"text-align: center;"></td><td align=3D"left" class=
+=3D"content" width=3D"550" style=3D"text-align: center;"><a class=3D"image-=
+link" target=3D"_blank" href=3D"https://email.mg2.substack.com/c/eJxVUc3O3C=
+AMfJrllogQCOTA4VOlvkbEj5OlXwIpkN1un75OcqqE7NEYeyyPMxWWlD96T6WSo0CegtdM8H4YO=
+fGa-04JRUKZ5gywmbDqmg8g-2HX4EwNKZ4NXChKyVOzUY5CjVIJCpYa2Tsu7MyNm630YAdyykzm=
+8AGiAw0vyJ8Ugaz6WeteHv3Xg_3E53xsy2FLNe67dWlDKmxmAcwzVPc8v0xr2EJ9sB8zDqwJwe8=
+b9F9LSv4srNOe05KhlPAC5EsF2LH3FmPilBOnIAZ7uG_Aem6ACmud4o01pm94L6EZRaca423PLE=
+g5Kt6WvjWb-ZuieZd7Q5xxX-WC17rlgo7bAUYmm5l3ruFO2cYClQ10yjDoGVeKTmpgf7ii7a8dF=
+hI0o4xSyTqqOsG7tmtRFuz7aV7VPTjdFvbffUjW0fiQS_ABy8tp1MXjRhPm7YihfiaIxq7gbwvr=
+7fnlSP3soCO8ywq1Qr5J9FWyYZAjQSmfcGbEFry6qc9_K1K7Lg" style=3D"border: none; =
+display: block; height: auto; margin: 0; padding: 0; text-decoration: none;=
+ width: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-=
+e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/c4b6e92=
+7-f41c-4c8b-be07-e18a2e324880_862x480.jpeg&quot;,&quot;height&quot;:480,&qu=
+ot;width&quot;:862,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:89115,&qu=
+ot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&=
+quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" class=3D"wide-image" s=
+rc=3D"https://cdn.substack.com/image/fetch/w_1724,c_limit,f_auto,q_auto:goo=
+d,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb3=
+2be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc4b6e927-f41c-4c8b-be07-e18a2=
+e324880_862x480.jpeg" style=3D"-ms-interpolation-mode: bicubic; border: non=
+e !important; display: block; height: auto; margin: 0 auto; max-width: 550p=
+x; vertical-align: middle; width: 100%;"></a></td><td style=3D"text-align: =
+center;"></td></tr></tbody></table><p style=3D"color: #1a1a1a; font-size: 1=
+6px; line-height: 26px; margin: 0 0 1em 0;">Yeah, Montana is probably a mou=
+ntain state, shut up.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-=
+height: 26px; margin: 0 0 1em 0;">One of the things I have been most annoye=
+d with is the people who have been claiming that COVID may have started in =
+urban centers but is coming for rural America where there are fewer ICU uni=
+ts and hospital beds and that will spell disaster. </p><p style=3D"color: #=
+1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">Quite frank=
+ly, this does not seem to be the case. Among the Plain states, COVID simply=
+ does not seem to have taken a solid hold. Recently cases have gone above t=
+he caution line in a few states, but this is most likely due to the small u=
+rban centers that these states host. Cases are relatively low and deaths ha=
+ve been thankfully few and far between. </p><p style=3D"color: #1a1a1a; fon=
+t-size: 16px; line-height: 26px; margin: 0 0 1em 0;">There has been some co=
+ncern about Oklahoma and Kansas recently, but their increases are not expon=
+ential and there is hope that they can pull the infection curve under contr=
+ol reasonably soon.</p><h2 style=3D"color: #1a1a1a; font-family: 'SF Compac=
+t Display', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif=
+, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 1.62=
+5em; font-weight: 700; line-height: 1.16em; margin: 1em 0 0.625em 0;">West =
+Coast</h2><table class=3D"image-wrapper" width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em auto; mso-padding-alt:=
+ 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td><td align=
+=3D"left" class=3D"content" width=3D"550" style=3D"text-align: center;"><a =
+class=3D"image-link" target=3D"_blank" href=3D"https://email.mg2.substack.c=
+om/c/eJxVUUuunDAQPM14B_IXzILFU6RcA_nTMM4Dm9hmJpPTp4FVJMsudburWlXOVFhS_ox7Kp=
+UcBfIU_MiVFN0giR-lZ1ppEso0Z4DNhHWs-QCyH3YNztSQ4jkglaaUPEeADhiVsxaaCm2YB8eZN=
+jNl1Mi-c-SUmczhA0QHI7wgf1IEso7PWvfyEF8P_hOP87Ethy3VuO_WpQ1LYTML4DtDdc_zy7SG=
+LdQH_zEjYU0Ift9AfC0p-bOxTntOS4ZSwguwXirAjrO3GFennDoF8bKH-wbs5waostZp2VhjRCN=
+FD82gmG6Mt4Jb6PtBy7aI1mzmb4rmXe4NkeN25YLXuuWCwqhOCSUbrQbkg841GqxvnOjRN0bdIN=
+mkO_pH9rL9tcNCwsgpp7TnjGqmJGtZi7Jg30_zqu4h6bbw__wheYzGh1yCD9hezqCuOm404bsdM=
+dTPBNHYFfwdYb0zvxKpnx3GCO-yQq2Q7yLm2vOu6weCUj4hZ8QRdN3U5z8YXbos" style=3D"b=
+order: none; display: block; height: auto; margin: 0; padding: 0; text-deco=
+ration: none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https=
+://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/i=
+mages/3a565354-8593-4e6c-8ebd-c3745810c941_860x474.jpeg&quot;,&quot;height&=
+quot;:474,&quot;width&quot;:860,&quot;resizeWidth&quot;:null,&quot;bytes&qu=
+ot;:78149,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quo=
+t;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" class=3D"=
+wide-image" src=3D"https://cdn.substack.com/image/fetch/w_1720,c_limit,f_au=
+to,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-4=
+37e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3a565354-8593-4e=
+6c-8ebd-c3745810c941_860x474.jpeg" style=3D"-ms-interpolation-mode: bicubic=
+; border: none !important; display: block; height: auto; margin: 0 auto; ma=
+x-width: 550px; vertical-align: middle; width: 100%;"></a></td><td style=3D=
+"text-align: center;"></td></tr></tbody></table><table class=3D"image-wrapp=
+er" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"margin: 1.6em auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=
+=3D"text-align: center;"></td><td align=3D"left" class=3D"content" width=3D=
+"550" style=3D"text-align: center;"><a class=3D"image-link" target=3D"_blan=
+k" href=3D"https://email.mg2.substack.com/c/eJxVUduupCAQ_JrhTYNcFB94ONlkf8N=
+waR32KLiAMzv79dvq0yYEKtV0V6fKmQpLyh-9p1LJUSBPwWsmBe9HQbwWvlNSkVCmOQNsJqy65g=
+PIftg1OFNDimeDkIpS8tRCjZ2TylI-j3buzcCYGGY5eNED59yTU2Yyhw8QHWh4Qf6kCGTVz1r38=
+uBfD_YTj_OxLYct1bjv1qUNqbCZBfCdobrn-WVawxbqg_2YcWBNCH7fgH8tKfmzsE57TkuGUsIL=
+kC8VYMfeW4zJU06egnjZw30D1nMDVFrrlGisMbwRfIBmlJ1qjLecWRiGUYm28NZs5m-K5l3uDXH=
+G7coFr3XLBR0fLUjaNaOyrBFoaKOsEQ21ig9OcuUYm1TP_ghF2187LCRoRhmlA-uo6qTo2q5FWb=
+Dvp3lV9xB0W9h__pCso_Ehl-ADlpczqIvHjSZ8tyOG-pkgGruCvyOsd-ZXIvWzg47wLivUCvkmM=
+deB9f0wEpTyCWdGbEHXTX3-A7ahugo" style=3D"border: none; display: block; heig=
+ht: auto; margin: 0; padding: 0; text-decoration: none; width: auto;"><img =
+data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9=
+518-adb32be77984.s3.amazonaws.com/public/images/c39be501-98b2-4185-8ba4-0b8=
+37c538c22_862x480.jpeg&quot;,&quot;height&quot;:480,&quot;width&quot;:862,&=
+quot;resizeWidth&quot;:null,&quot;bytes&quot;:83679,&quot;alt&quot;:null,&q=
+uot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot;href&quo=
+t;:null}" alt=3D"" width=3D"550" class=3D"wide-image" src=3D"https://cdn.su=
+bstack.com/image/fetch/w_1724,c_limit,f_auto,q_auto:good,fl_progressive:ste=
+ep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaw=
+s.com%2Fpublic%2Fimages%2Fc39be501-98b2-4185-8ba4-0b837c538c22_862x480.jpeg=
+" style=3D"-ms-interpolation-mode: bicubic; border: none !important; displa=
+y: block; height: auto; margin: 0 auto; max-width: 550px; vertical-align: m=
+iddle; width: 100%;"></a></td><td style=3D"text-align: center;"></td></tr><=
+/tbody></table><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26=
+px; margin: 0 0 1em 0;">Yes, yes, careful observer, I have included Califor=
+nia twice. I added them to &#8220;Southern Border&#8221; states as well as =
+&#8220;West Coast&#8221;. The reason is because I suspect that California b=
+elongs in both these regions. I think that the southern part of California =
+is more similar to Texas and Arizona while the northern part is more akin t=
+o Oregon and Washington.</p><p style=3D"color: #1a1a1a; font-size: 16px; li=
+ne-height: 26px; margin: 0 0 1em 0;">Even Washington and California shows u=
+p as some of the earliest problem areas for COVID, they have managed to avo=
+id the worst parts of this pandemic. Cases are low and deaths are low.</p><=
+p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 =
+1em 0;">This may be due to the incredibly strict lock-downs that have been =
+implemented across the western states. It may be due to the mask mandates t=
+hat are ubiquitous on the west coast. Or it may be due to early interventio=
+n in urban areas. For whatever reason, the west coast has seen some of the =
+lowest COVID infections outside of&#8230;</p><h2 style=3D"color: #1a1a1a; f=
+ont-family: 'SF Compact Display', -apple-system, 'Segoe UI', Roboto, Helvet=
+ica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Sy=
+mbol'; font-size: 1.625em; font-weight: 700; line-height: 1.16em; margin: 1=
+em 0 0.625em 0;">Upper Northeast + Alaska and Hawaii</h2><table class=3D"im=
+age-wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D"margin: 1.6em auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><t=
+d style=3D"text-align: center;"></td><td align=3D"left" class=3D"content" w=
+idth=3D"550" style=3D"text-align: center;"><a class=3D"image-link" target=
+=3D"_blank" href=3D"https://email.mg2.substack.com/c/eJxVUc3OnDAMfJrNDZRfCA=
+cOnyr1NZCTGDb9IKFJ2O326RvgVCmyR-PYY3ksFFxi-ox7zIUcGdPk3ciVFN0giRulY1pp4vM0J=
+8QN_DqWdCDZD7N6C8XHcDZIpSklz9GZWXFmYKYW584YNEoIMXPOWDf0KMgpM8HhPAaLI74wfWJA=
+so7PUvb8EF8P_rM-60KbD5ML2O_Wxq1SfoMFa56x2Of5ZVr95suD_5jrwBIr-H0D8bXE6M7COu0=
+pLglz9i-sfC6Ie-29xbg65dQpWIM57DfWemqQKmOslo0BEI0UPTaDYroBZwQ32PeDlm0WLWzwNw=
+Z453vDOuO-ygWvdfMFgcrOUmSNpso2EtnQDAOdGyvdDBaYlhQn3bE_smftrx0X4kdOOaU9Z1QzJ=
+VnL2iqL5v2EV7EPSbeF_3cfksYAzqfsna_l5TTq4utGU83bEXz5TBjArOhuC8vt-eVI-ew4Bnzn=
+FUvBdJPV1553XT-QKuVinRlqS706lOc_y3q7kw" style=3D"border: none; display: blo=
+ck; height: auto; margin: 0; padding: 0; text-decoration: none; width: auto=
+;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa=
+3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/a046c0e1-805c-4e19-=
+990f-c4dfaca1840e_861x471.jpeg&quot;,&quot;height&quot;:471,&quot;width&quo=
+t;:861,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:88657,&quot;alt&quot;=
+:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot;=
+href&quot;:null}" alt=3D"" width=3D"550" class=3D"wide-image" src=3D"https:=
+//cdn.substack.com/image/fetch/w_1722,c_limit,f_auto,q_auto:good,fl_progres=
+sive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.=
+amazonaws.com%2Fpublic%2Fimages%2Fa046c0e1-805c-4e19-990f-c4dfaca1840e_861x=
+471.jpeg" style=3D"-ms-interpolation-mode: bicubic; border: none !important=
+; display: block; height: auto; margin: 0 auto; max-width: 550px; vertical-=
+align: middle; width: 100%;"></a></td><td style=3D"text-align: center;"></t=
+d></tr></tbody></table><table class=3D"image-wrapper" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em auto; mso=
+-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></=
+td><td align=3D"left" class=3D"content" width=3D"550" style=3D"text-align: =
+center;"><a class=3D"image-link" target=3D"_blank" href=3D"https://email.mg=
+2.substack.com/c/eJxVUcGupCAQ_JrhpkEEhQOHl032N0wDrcM-BRdwZme_flFPmxCoVNNdnS=
+oLBZeYPnqPuZAjY5q800zwflCcOM1dJ4UkPk9zQtzAr7qkA8l-mNVbKD6Gs4ELSSl5akFB0XkeR=
+sGgg5kpNSjJOmqodLN0nJwyExzOY7Co8YXpEwOSVT9L2fOj_3qwn_VYF9p8mFzAfrc2bpXyGyxY=
+3xmLfZ5fptVvvjzYj7kOLLGC3zfov5YY3VlYpz3FJWHO_oWVzwVxr723GBOnnDgF62UO-421nhq=
+kwhgreWMA-ob3IzZKdLIBZ3pmcByV5G3uW9jgbwzwzveGdcbtygWvdfMFrRoNF6ga7MTc8FFBo3=
+pBG-YGEMDnvpvNJAf2h0va_tpxIV4zyigdq3OyE7xru7bKonk_4VXsg9NtYf_5Q5IO4HzK3vlaX=
+s6gLr5uNNV3O4IvnwkDmBXdHWG5M78SKZ8ddcB3XrEUTDdZcx3ZMIyKVCkX68xQW6rrUJ7_ABvQ=
+up8" style=3D"border: none; display: block; height: auto; margin: 0; paddin=
+g: 0; text-decoration: none; width: auto;"><img data-attrs=3D"{&quot;src&qu=
+ot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazona=
+ws.com/public/images/c97b45e9-e15f-479a-9350-2d6a5a4f31fb_862x480.jpeg&quot=
+;,&quot;height&quot;:480,&quot;width&quot;:862,&quot;resizeWidth&quot;:null=
+,&quot;bytes&quot;:93684,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;=
+type&quot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=3D=
+"550" class=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w_17=
+24,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-=
+e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc=
+97b45e9-e15f-479a-9350-2d6a5a4f31fb_862x480.jpeg" style=3D"-ms-interpolatio=
+n-mode: bicubic; border: none !important; display: block; height: auto; mar=
+gin: 0 auto; max-width: 550px; vertical-align: middle; width: 100%;"></a></=
+td><td style=3D"text-align: center;"></td></tr></tbody></table><p style=3D"=
+color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">How=
+ do I describe these glorious parts of our great country without sounding c=
+ondescending?</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: =
+26px; margin: 0 0 1em 0;">For whatever reason, be it a lack of travel and t=
+ourism or careful state policy, these states have managed to avoid the wors=
+t impacts of COVID over the last 4 months. They have low case rates and nea=
+r-zero death rates.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-he=
+ight: 26px; margin: 0 0 1em 0;">Alaska and Hawaii are clearly able to separ=
+ate themselves from sources of infection due to the fact that they are isol=
+ated regions with solid control and self-governance. But the same goes for =
+Vermont, New Hampshire, and Maine. They are low-density states and while th=
+ey may not be screening travelers at the border, they likely benefit from t=
+he overall drop in mobility as people prefer to stay home over travelling t=
+o the rugged and gorgeous regions to the north where all the weirdos live. =
+</p><h2 style=3D"color: #1a1a1a; font-family: 'SF Compact Display', -apple-=
+system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoj=
+i', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 1.625em; font-weight: 7=
+00; line-height: 1.16em; margin: 1em 0 0.625em 0;">Summary</h2><p style=3D"=
+color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">I h=
+ope you&#8217;ve found this helpful. I hope you found your state and were a=
+ble to decipher where your area fits in a larger scheme of things. </p><p s=
+tyle=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em=
+ 0;">If this was not as helpful as you hoped, please reach out either in co=
+mments or through twitter (I&#8217;m found at <a href=3D"https://email.mg2.=
+substack.com/c/eJwlUM2OhCAMfho5GkBQPHDYy76GQegoWQQDdYxvvzCTNGn6Nf1-ag3ClvKj=
+z1SQXAXy4p3mUgzjLIjTwjElFfFleWWAw_igMV9AzmsN3hr0KbYDIRWlZNezUhKkhXlmq2UzyJc=
+d-PRiYmSDGjgnTWYxl_MQLWh4Q35SBBL0jniWbvjp-G8tvD0i5N6mo05nCh6rWjgM7sRrTjmlE2=
+dUMSlYz3qYJljv3bzRdoIeG-_LtRY09q8xkKyjcT4X73xdby3FB68hltqPK3p8FohmDeC--fD7k=
+I9dfE7QEe4SoJn6gjX0xMdxmkmVcqlyRt18Nov_FcN1Qw" style=3D"color: #1a1a1a; tex=
+t-decoration: underline;">@politicalmath</a> ) and I&#8217;ll do my best to=
+ answer every question.</p><p style=3D"color: #1a1a1a; font-size: 16px; lin=
+e-height: 26px; margin: 0 0 1em 0;">I think we are doing better. I&#8217;m =
+hopeful that we are already past the worst of this. But I&#8217;m still cau=
+tious and careful. I want an informed optimism over a willfully blind optim=
+ism. </p><h2 style=3D"color: #1a1a1a; font-family: 'SF Compact Display', -a=
+pple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color=
+ Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 1.625em; font-weig=
+ht: 700; line-height: 1.16em; margin: 1em 0 0.625em 0;">Disney Shorts: Fall=
+ Out, Fall In</h2><table class=3D"image-wrapper" width=3D"100%" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 1.6em auto; mso-padd=
+ing-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td><t=
+d align=3D"left" class=3D"content" width=3D"550" style=3D"text-align: cente=
+r;"><a class=3D"image-link" target=3D"_blank" href=3D"https://email.mg2.sub=
+stack.com/c/eJxVUduupCAQ_JrhTYOACg88nGyyv2G4tA45Ch7AmZ39-m31aRMClWq6qtPlTIU=
+l5Y_eU6nkKJCn4DXrBR-UIF4L38leklCmOQNsJqy65gPIftg1OFNDimeD6CWl5KmpFLOYOQyid3=
+QUhnqn_Gy5UTCrUThy2kzm8AGiAw0vyJ8Ugaz6WeteHvzrwX7jcT625bClGvfdurQhFTazAL4zV=
+Pc8v0xr2EJ9sF8zCtaE4OcG_GtJyZ-FddpzWjKUEl6AfKkAO_beZqw_7frTEC97uG_Aem6A9tY6=
+KRprDG8EH6FRfScb4y1nFsZRSdEW3prN_E3RvMs9IWrcW7ngNW65IBgKg6KiobMfGwEzRWVFG9m=
+pQQql5MDd1LGB_VFCtHtcSNCMMkpH1lHZ9aJruxZtwb6f5lXdQ9BtYf_th2QdjQ-5BB-wvJxBXT=
+xONOG7HTHUzwTR2BX8HWG9M78SqZ8ddIR3WaFWyDeJuY5sGEZF0Mon1IzYgls39fkPJe-62Q" s=
+tyle=3D"border: none; display: block; height: auto; margin: 0; padding: 0; =
+text-decoration: none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&q=
+uot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com=
+/public/images/ea0e6904-0fd7-4ef0-ba90-81968499863c_1262x944.png&quot;,&quo=
+t;height&quot;:944,&quot;width&quot;:1262,&quot;resizeWidth&quot;:null,&quo=
+t;bytes&quot;:1717670,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;typ=
+e&quot;:&quot;image/png&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550=
+" class=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w_2524,c=
+_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05b=
+bc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fea0e6=
+904-0fd7-4ef0-ba90-81968499863c_1262x944.png" style=3D"-ms-interpolation-mo=
+de: bicubic; border: none !important; display: block; height: auto; margin:=
+ 0 auto; max-width: 550px; vertical-align: middle; width: 100%;"></a></td><=
+td style=3D"text-align: center;"></td></tr></tbody></table><p style=3D"colo=
+r: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">World W=
+ar 2 was hard on the Disney company. Disney had always made a good chunk of=
+ money from their international box office (mainly Europe) and WWII essenti=
+ally locked off half of the world from paying to see the glorious Disney fi=
+lms that were admired by communists and fascists alike.</p><p style=3D"colo=
+r: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0;">Disney,=
+ ever the patriot, hoped to find relief in making films for the military, b=
+ut they were a demanding client and not eager to pay for the quality they d=
+emanded.</p><p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px;=
+ margin: 0 0 1em 0;">In the end, the Walt Disney Company ended up making a =
+series of films that were meant to resonate with the struggles of the enlis=
+ted man (though such a customer had little time or opportunity to watch pic=
+ture shows).  </p><p style=3D"color: #1a1a1a; font-size: 16px; line-height:=
+ 26px; margin: 0 0 1em 0;">This is one of those shorts trying desperately t=
+o meet people where they are. Donald is a grunt in the army, marching endle=
+ss miles and enduring the graceless and brutal patterns of army life. It is=
+ a rather tender and gently humorous view of army life, perhaps meant to pr=
+ovide relief and comfort to those at home that their loved ones were enduri=
+ng hardship but there was some joy to be found in it.</p><p style=3D"color:=
+ #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0 1em 0; margin-bot=
+tom: 0;">I imagine there is some parallel in our current moment though I st=
+ruggle to put my finger on it. </p></div></div><table cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"post-meta big  custom" style=3D"margin: 0 0 10px;">=
+<tr><td class=3D"post-meta-item icon" style=3D"color: #757575; font-family:=
+ -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Co=
+lor Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; font-weig=
+ht: 300; height: 30px; line-height: 30px; padding: 7px 12px 7px 0; padding-=
+right: 16px; position: relative; text-decoration: none; text-indent: 3px; v=
+ertical-align: middle; white-space: nowrap;"><span><a href=3D"https://email=
+=2Emg2.substack.com/c/eJxVkk2P2jAQhn8NuR=
+XZTgLJwYdVKShhSbvqbmF7iRx7gMmXo9iBDb-=
+-DuweKlkezWN7vl5LYeGk-5F32lhvMNDnqDgLA38RB57igaJRGHlo8mMP0Aisue0H8LqhqFEKi7=
+qdHgRhRIh35pRIQoJjtPCFX0AkCQ3DqDhKoCqICYu9KU0uBoXQSuBwgX7ULXg1P1vbmZn_NGNrt=
+zpdYyPseW6Gwlghq7nUjeOiQ7df6P2Ksc7ca_rWg5BTLTN_bXUFzq5gTKlkf8YDq6uk1GP2-nLL=
+yoo8f0-vhZ-RT-7vyneW3SqTtGn9vs-I2MeD4xh0rErwimK_Js7_yF4rurv9CHe3lw8Xo5P-Dn9=
+ielX7xGart2C3ekLHb86f-Ph3vy7Vpr4UmMZzP3nO4fCrLeXWZmWp8q1OMEqjU7l52b5BvrpEeE=
+iz8-Y3mbHFYJvc6KGX4Pr4msAnb0Dh0Ez9TY17yBlhhCwZJRENAzqnc1guobiexcXKWUCaE_tvi=
+F7PW6GwN6jQHZ-mKHfuFM2dbYYW7ZhDK4oa1ENs-_gdd-3s2AFv4WpqsBb6B3Q_YMkWi2XsuVRK=
+u5gt_5LwH3Xy0T4" class=3D"like-button" style=3D"color: #757575; display: bl=
+ock; position: relative; text-decoration: none;"><img src=3D"https://cdn.su=
+bstack.com/image/fetch/w_45,c_scale,f_png,q_auto:good,fl_progressive:steep/=
+https%3A%2F%2Fsubstack.com%2Ficon%2FHeartIcon%3Fv%3D2%26height%3D30" width=
+=3D"22.5" height=3D"30" style=3D"border: none !important; float: left; heig=
+ht: 30px; max-width: 22.5px; vertical-align: middle; width: auto;" alt=3D""=
+></a></span></td><td class=3D"post-meta-item icon" style=3D"color: #757575;=
+ font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-ser=
+if, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16=
+px; font-weight: 300; height: 30px; line-height: 30px; padding: 7px 12px 7p=
+x 0; padding-right: 16px; position: relative; text-decoration: none; text-i=
+ndent: 3px; vertical-align: middle; white-space: nowrap;"><a href=3D"https:=
+//email.mg2.substack.com/c/eJxVkk1zmzAQhn-NudkD4vvAIeOMY7uBjBvqur0wQlrMGhAU=
+CRP86yPs5NAZ6fJoP7Tvu4wqOLf9FHWtVMYgoc-QR8R1bC90DB453ArcwECZFT1AQ7GOVD-A0Q1=
+5jYwqbMWc4LiBaRplZNm-bxZW4RDKbRJoXLCchUXBGA9IYRtzm4wOHEEwiOAK_dQKMOqoVKqTC_=
+tpQTb6dG2NDVXlSg65VJRVK9Y2M9d3aod-qaECuWTtFflSDE0OvVyi0EAo-FA6TCc0IJSuuVFtB=
+WJhP8O0txg5TidSV7tLOyXp4ZZcKvN1vR9zOzG_uB1f_pDkVsldU5d8vfPi9JebpPHHWxqb8fuI=
+9JTcdByy7RFf04P19vw07nBEZh_xzl_CG19b09_fmwt_qa857sPVdmNhaItrwWO_C3-efCd-Tyt=
+225-2R-_w4-j-c9JwUwLNnAXxBtVkUg_KQP_7W4Qv3gDHoZnnmf0wMCImMU2fWGZguY61slbg-5=
+CPJb0qtnDM5kz-09HoI0E59hI56ufzXOXOtanZLNsgUE0ZCJrXwB9-q8eC3O1TUweRgFHWoBT0D=
+6iXwCee54eGbsVbXVNE3y5-AiYc08U" style=3D"color: #757575; display: block; te=
+xt-decoration: none;"><img src=3D"https://cdn.substack.com/image/fetch/w_42=
+,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%=
+2Ficon%2FCommentIcon%3Fv%3D2%26height%3D30" width=3D"21" height=3D"30" styl=
+e=3D"border: none !important; float: left; height: 30px; max-width: 21px; s=
+troke: #757575; vertical-align: middle; width: auto;" alt=3D""></a></td><td=
+ class=3D"post-meta-item icon" style=3D"color: #757575; font-family: -apple=
+-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emo=
+ji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; font-weight: 300=
+; height: 30px; line-height: 30px; margin-right: 0; padding: 7px 12px 7px 0=
+; padding-right: 16px; position: relative; text-decoration: none; text-inde=
+nt: 3px; vertical-align: middle; white-space: nowrap;"><span><a href=3D"htt=
+ps://email.mg2.substack.com/c/eJxVks2SojAUhZ8GdlohBJAFiy67bHUaupxmHGc2VEiuE=
+oHAkCCNT9_Bn8VUJZsvNzn35FxGNZyabozaRmm7V9BlgkfYI64fEptHhDsLb2ELlR07gJqKKtJd=
+D3bb55VgVItGTheIt0DILiJEg8ChOKf-EfkBoT6lDsE8oH648EOP2JNMRnsuQDKI4ALd2Eiwq6j=
+QulWW-2LhlVltU4ma6mKu-lxpyso5a-qJmz02fTczUIOaseYi-Ez2dQ6dmglpgNTwpS13pZsSpO=
+W-wrh1GN6PB1yVm3MzJunumpxL9L7cDrmboAd34_MfnFxLtamrgi83fpz-8pI0_vpIYxR_DoIek=
+qupE2y9F-_pzvl4fRk2YhDM3YsbfwuvfOmMf3-vzvytuuRiG87XK0eErrwceRy04c9DQOLPtGTX=
+7WG993c_9t4_koarAmhGLOz3us6UccfA9P10_uA1cNHXk58phAe8uZV6qi5oB4ZSNkXyBLaIMMI=
+IBdhBC8cjztyZQxBAPhT0oplFUH3C__2x3UWSctEpwYU5Pk1iN24CN3J13UuhxwwkzSvg91nQ9-=
+G5RavHFiIJg6pAa-ju0AxIgH0_CG0jxRvzpoyeCX8D0Vjcng" style=3D"color: #757575; =
+display: block; text-decoration: none;"><img src=3D"https://cdn.substack.co=
+m/image/fetch/w_33,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%=
+2F%2Fsubstack.com%2Ficon%2FShareIcon%3Fv%3D2%26height%3D30%26stroke%3D%2523=
+999999" width=3D"16.5" height=3D"30" style=3D"border: none !important; floa=
+t: left; height: 30px; max-width: 16.5px; vertical-align: middle; width: au=
+to;" alt=3D""></a></span></td></tr></table><div class=3D"container-border" =
+style=3D"border-top: 1px solid #f6dfed; box-sizing: border-box; font-size: =
+16px; line-height: 26px; margin: 32px 0 0; width: 100%;"></div><div class=
+=3D"post-cta" style=3D"font-size: 16px; line-height: 26px; margin: 24px 0 4=
+0px;"><p style=3D"color: #1a1a1a; font-size: 16px; font-style: italic; line=
+-height: 26px; margin: 24px 0 0; margin-top: 0;"><span>You&#8217;re on the =
+free list for <a href=3D"https://email.mg2.substack.com/c/eJxVUEFuxCAMfE04R=
+kAgsAcOvfQbEQFvgppABGZX-X3JRj1UsmRrrPHM2FmEJeXTHKkgqQXyFLzhUgzjQxBvhGdaahLK=
+9MwAuw2bwVyBHHXegrMYUrwIQmpKyWqeWqrBDVp6Dk62YRBgqfTMCTlL58klM9nqA0QHBl6QzxS=
+BbGZFPEo3fHX8u9WRtrBbXPtS54LW_fQu7Q0nwXDKKVWcUc2kYD3rQSmY36t9oesE3Rf-j0Syid=
+aHXIIPbb1cET54SzC1vtcY8Jwg2nkDf4fD-xsfr3geYCK8ywaIkG-wJVZ8HNWDNCmf2s1o_iz_A=
+gC_dF4" style=3D"color: #1a1a1a; text-decoration: underline;">Marginally Co=
+mpelling</a>. For the full experience, <a href=3D"https://email.mg2.substac=
+k.com/c/eJxVkktv6jAQhX9NskS281540cujgEhQRKDQDXKcAUyechzS8OuvU9pFJW_8WXNm5hx=
+zpuBay4E2davMrgV5Fhkljm25gW1m1M6w7_imaM8XCVAyUVAlOzCbLi0EZ0rU1VhgOz5C5o06OP=
+WDNPWswEI4JdzjGDvMIi5zgyC1HHNsc2ZdJqDiQOEBcqgrMAt6U6ppDevNIAt9mroQJVO3Sdulr=
+WI8n_C61Hy8cilSMKyFqnOoDGsGwxpzchiOpMhX93qIkvgZ3XO0ma6b0zEW2_scb5P9M0zyZzSb=
+t6vyYPPpyg2TvRM9868wCVG46wU7Rk9dL_jyIDZJjLezt34lesGtgxj5idyKE1GPTGte4kkUp75=
+Y4_2uKBfSne5mc3RBy818-Rn_202X7zL86L6W04_-fW8Qt1Plua07yfXks9-lfngJmejKcZPR3x=
+_I60pBpTQdLeOKmYISRBDyCEY-dmw8wRPwPEj7G3sobtiovJI_fpmSViwTshWZ0M_XUf2b6_C0f=
+ll2lVDDGSqWFpC9clWvj_AdkxoaoBX0bQFKgXxBHbZHXNcLTN0qq7VmRX_T-g_trMpY" style=
+=3D"color: #1a1a1a; text-decoration: underline;">become a paying subscriber=
+=2E</a></span></p><p class=3D"cta-box" s=
+tyle=3D"color: #1a1a1a; font-size: 16=
+px; font-style: italic; line-height: 26px; margin: 24px 0 0; text-align: ce=
+nter;"><a role=3D"button" href=3D"https://email.mg2.substack.com/c/eJxVkktv=
+6jAQhX9NskS281540cujgEhQRKDQDXKcAUyechzS8OuvU9pFJW_8WXNm5hxzpuBay4E2davMrgV=
+5Fhkljm25gW1m1M6w7_imaM8XCVAyUVAlOzCbLi0EZ0rU1VhgOz5C5o06OPWDNPWswEI4JdzjGD=
+vMIi5zgyC1HHNsc2ZdJqDiQOEBcqgrMAt6U6ppDevNIAt9mroQJVO3SdulrWI8n_C61Hy8cilSM=
+KyFqnOoDGsGwxpzchiOpMhX93qIkvgZ3XO0ma6b0zEW2_scb5P9M0zyZzSbt6vyYPPpyg2TvRM9=
+868wCVG46wU7Rk9dL_jyIDZJjLezt34lesGtgxj5idyKE1GPTGte4kkUp75Y4_2uKBfSne5mc3R=
+By818-Rn_202X7zL86L6W04_-fW8Qt1Plua07yfXks9-lfngJmejKcZPR3x_I60pBpTQdLeOKmY=
+ISRBDyCEY-dmw8wRPwPEj7G3sobtiovJI_fpmSViwTshWZ0M_XUf2b6_C0fll2lVDDGSqWFpC9c=
+lWvj_AdkxoaoBX0bQFKgXxBHbZHXNcLTN0qq7VmRX_T-g_trMpY" class=3D"button primar=
+y subscribe-btn" style=3D"-moz-box-sizing: content-box; -webkit-box-sizing:=
+ content-box; background-color: #FF81CD; border: 0px solid #FF81CD; border-=
+radius: 4px; border-width: 13px 20px 13px 18px; box-sizing: content-box; co=
+lor: #ffffff; cursor: pointer; display: inline-block; font-family: -apple-s=
+ystem, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 17px; font-style: normal=
+; font-weight: 300; height: 24px; line-height: 24px; margin: 0; opacity: 1;=
+ outline: none; padding: 0; text-decoration: none !important; vertical-alig=
+n: middle;">Subscribe</a></p></div><div class=3D"footer" style=3D"backgroun=
+d: #f8f8f8 !important; color: #bcbcbc; font-size: 16px; line-height: 26px; =
+padding: 32px; text-align: center;"><p class=3D"small" style=3D"color: #bcb=
+cbc; font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans=
+-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size=
+: 13px; line-height: 26px; margin: 0 0 1em 0; margin-bottom: 0; padding-bot=
+tom: 30px;">&#169; 2020 <span>Matt Shapiro</span> <a href=3D"https://email.=
+mg2.substack.com/c/eJxVkVtv4jAQhX9N8ogc58qDHxCIFtSE7UKB9iVy7Alx7o0d0uTXrwO7=
+DytZmtEZj491PkYV3JpuJG0jldlL6GLBCXYd21s6JicOtwI3MIWM0w6goqIkquvBbPukFIwq0dT=
+zguMGCJkZQYylKEU-YjhwMXYQRrblusxmKWWpZZmzTUx7LqBmQOAO3djUYJYkU6qVhr0y8Fafti=
+lFRVW2kH0iFWXFgjWV1imbHXXDhaRJCfHjS4atFzijUhn2xsCeagqodQvj3mL4PF5xWezyZoxO7=
+1OUF-htvR8SO0J_dTvMP3E0FXJXlRlf77zw9OFGp_DncApReBwEvUaTvifY61m8nd6tw2Y17MQg=
+mH0Ws_71Uk6fl738Oi_L5LJtk_V-uXgZgo8L-_09HREG6cTnTb6dQju_4tj5tRf39AA_3nFVbBp=
+pCoJ1UsjHFgos17EW1gJ8H5Iho3fFDAdVN_xfFGZHaspFJwUXenybU3jomkusa9XXQo0x1HNI_I=
+lMPRk_CKixBVLDIEtQCrqnqDn62PP8pamteKPfrMk_EH8AsV689A" style=3D"color: #bcbc=
+bc; text-decoration: underline;"><span style=3D"color: #bcbcbc; text-decora=
+tion: underline;">Unsubscribe</span></a><br>548 Market Street PMB 72296, Sa=
+n Francisco, CA 94104</p><p class=3D"small powered-by-substack" style=3D"co=
+lor: #bcbcbc; font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Ar=
+ial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; =
+font-size: 13px; line-height: 26px; margin: 0 0 1em 0; margin-bottom: 0; pa=
+dding-bottom: 0;"><a href=3D"https://email.mg2.substack.com/c/eJxNkM2OhCAQh=
+J9GjgYRUQ8cNtnMaxh-2pGsgIFmJr79orubbNKnr9NVXWUUwjOmUx4xIykZ0uKsZAPvxcyJldx2=
+0zARl5c1AXjldompADmK3p1R6GK4DvgwUUo2KYRls-LdNGmqZ9NZK2DSWoxqoOtqKblsFlWsg2B=
+AwgvSGQOQXW6IR276j4Y96uSiMyrz1ZroL9I_Cvolx5IMNP3n37ph4uIerCu-8vvBX2hiQAhY6R=
+ojQiJOMsooHVlHp27gXdu1MI6g35t6oWk49U_W_jcmSQZlXcrOurp-XuI3r-GrvPclODwXCErvY=
+H96wZ8i75h4HiADvPMOeD1ww1rWyIQYZ1KtbKyaoZ7szivcvgGi04mz" style=3D"color: #b=
+cbcbc; text-decoration: none;"><img alt=3D"Publish on Substack" src=3D"http=
+s://cdn.substack.com/image/fetch/w_340,c_limit,f_auto,q_auto:good,fl_progre=
+ssive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Fpublish-on-substack.png" wid=
+th=3D"170" style=3D"border: none !important; margin-top: 3px; max-width: 55=
+0px; vertical-align: middle;"></a></p></div></div></td><td></td></tr></tabl=
+e><img width=3D"1px" height=3D"1px" alt=3D"" src=3D"https://email.mg2.subst=
+ack.com/o/eJwlj8GOhCAQRL9mORpgUfTAtxikW-2swgSamfj3i-Opk-pU1avgGbeUL_dKhUUtm=
+GcCp3vzO0xGgDOgxn4UVOY1I56eDse5onjV5aDgmVK8DaYfpRS7CzjJwa4QYB2MDN5oCYueemVg=
+VDqAuGtmX4EwBnT4xnyliIKcllpKq5UcVW9Upzq0FpfP7t8cfow8N92VuhT24a8L6RTZRQ-UCwG=
+193aTffUGNrd71kh8zRj9ciA8zPyM_CLw9UIX8VMOZMb8iG2I1cNgJ9GqILXM2CwHnZ73fwwDZr=
+s"></body></html>
+--9e860041439f414e99f7b49371a7b720--
